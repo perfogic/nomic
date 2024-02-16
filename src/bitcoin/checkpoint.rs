@@ -799,14 +799,24 @@ impl Checkpoint {
         let mut txs = vec![];
 
         let intermediate_tx_batch = self.batches.get(BatchType::IntermediateTx as u64)?.unwrap();
-        let Some(intermediate_tx) = intermediate_tx_batch.get(0)? else {
+        if let Some(intermediate_tx) = intermediate_tx_batch.get(0)? {
+            log::info!("Intermediate Tx: {:?}", intermediate_tx.to_bitcoin_tx()?.txid());
+            txs.push(Adapter::new(intermediate_tx.to_bitcoin_tx()?));
+        } else {
             return Ok(txs);
         };
-        txs.push(Adapter::new(intermediate_tx.to_bitcoin_tx()?));
 
         let disbursal_batch = self.batches.get(BatchType::Disbursal as u64)?.unwrap();
         for tx in disbursal_batch.iter()? {
-            txs.push(Adapter::new(tx?.to_bitcoin_tx()?));
+            match tx {
+                Ok(tx) => {
+                    txs.push(Adapter::new(tx.to_bitcoin_tx()?));
+                },
+                Err(e) => {
+                    log::error!("Error processing transaction: {:?}", e);
+                    // Handle error, e.g., continue to next transaction, record the error, etc.
+                },
+            }
         }
 
         Ok(txs)
@@ -1094,7 +1104,7 @@ impl Config {
             sigset_threshold: SIGSET_THRESHOLD,
             emergency_disbursal_min_tx_amt: 1000,
             #[cfg(feature = "testnet")]
-            emergency_disbursal_lock_time_interval: 60 * 60 * 24 * 7, // one week
+            emergency_disbursal_lock_time_interval: 60 * 40, // one week
             #[cfg(not(feature = "testnet"))]
             emergency_disbursal_lock_time_interval: 60 * 60 * 24 * 7 * 2, // two weeks
             emergency_disbursal_max_tx_size: 50_000,
@@ -1170,7 +1180,7 @@ impl MigrateFrom<CheckpointQueueV1> for CheckpointQueueV2 {
 
 /// A wrapper around  an immutable reference to a `Checkpoint` which adds type
 /// information guaranteeing that the checkpoint is in the `Complete` state.
-#[derive(Deref)]
+#[derive(Deref, Debug)]
 pub struct CompletedCheckpoint<'a>(Ref<'a, Checkpoint>);
 
 /// A wrapper around an immutable reference to a `Checkpoint` which adds type
@@ -1519,6 +1529,7 @@ impl<'a> BuildingCheckpointMut<'a> {
             // unaccounted-for funds to return them to the rightful nBTC
             // holders.
             let intermediate_tx_out_value = intermediate_tx.value()?;
+            log::info!("Reserve value: {:?} - Intermediate tx out value: {:?}", reserve_value, intermediate_tx_out_value);
             let excess_value = reserve_value - intermediate_tx_out_value;
             let excess_tx_out = bitcoin::TxOut {
                 value: excess_value,
@@ -1860,6 +1871,7 @@ impl CheckpointQueue {
     #[query]
     pub fn emergency_disbursal_txs(&self) -> Result<Vec<Adapter<bitcoin::Transaction>>> {
         if let Some(completed) = self.completed(1)?.last() {
+            // log::info!("[Minh Dang Debug] Complete checkpoint: {:?}", completed);
             completed.emergency_disbursal_txs()
         } else {
             Ok(vec![])

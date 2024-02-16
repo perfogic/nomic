@@ -1,0 +1,1027 @@
+    Blocking waiting for file lock on build directory
+       Fresh unicode-ident v1.0.12
+       Fresh proc-macro2 v1.0.67
+       Fresh quote v1.0.33
+       Fresh syn v2.0.37
+       Fresh libc v0.2.148
+       Fresh cfg-if v1.0.0
+       Fresh serde_derive v1.0.188
+       Fresh version_check v0.9.4
+       Fresh autocfg v1.1.0
+       Fresh jobserver v0.1.26
+       Fresh cc v1.0.83
+       Fresh once_cell v1.18.0
+       Fresh memchr v2.6.3
+       Fresh zeroize_derive v1.4.2
+       Fresh zeroize v1.6.0
+       Fresh itoa v1.0.9
+       Fresh syn v1.0.109
+       Fresh bytes v1.5.0
+       Fresh typenum v1.17.0
+       Fresh getrandom v0.2.10
+       Fresh generic-array v0.14.7
+       Fresh rand_core v0.6.4
+       Fresh pin-project-lite v0.2.13
+       Fresh subtle v2.5.0
+       Fresh const-oid v0.9.5
+       Fresh scopeguard v1.2.0
+       Fresh smallvec v1.11.1
+       Fresh parking_lot_core v0.9.8
+       Fresh lock_api v0.4.10
+       Fresh futures-core v0.3.28
+       Fresh fnv v1.0.7
+       Fresh block-buffer v0.10.4
+       Fresh crypto-common v0.1.6
+       Fresh digest v0.10.7
+       Fresh parking_lot v0.12.1
+       Fresh futures-sink v0.3.28
+       Fresh futures-io v0.3.28
+       Fresh slab v0.4.9
+       Fresh futures-channel v0.3.28
+       Fresh futures-task v0.3.28
+       Fresh num_cpus v1.16.0
+       Fresh futures-macro v0.3.28
+       Fresh pin-utils v0.1.0
+       Fresh percent-encoding v2.3.0
+       Fresh pkg-config v0.3.27
+       Fresh futures-util v0.3.28
+       Fresh mio v0.8.8
+       Fresh signal-hook-registry v1.4.1
+       Fresh socket2 v0.5.4
+       Fresh tokio-macros v2.1.0
+       Fresh ppv-lite86 v0.2.17
+       Fresh tokio v1.32.0
+       Fresh http v0.2.9
+       Fresh cpufeatures v0.2.9
+       Fresh tinyvec_macros v0.1.1
+       Fresh ryu v1.0.15
+       Fresh tinyvec v1.6.0
+       Fresh rand_chacha v0.3.1
+       Fresh rand v0.8.5
+       Fresh num-traits v0.2.16
+       Fresh hashbrown v0.12.3
+       Fresh indexmap v1.9.3
+       Fresh serde v1.0.188
+       Fresh tracing-core v0.1.31
+       Fresh tracing-attributes v0.1.26
+       Fresh tracing v0.1.37
+       Fresh httparse v1.8.0
+       Fresh form_urlencoded v1.2.0
+       Fresh vcpkg v0.2.15
+       Fresh tokio-util v0.7.9
+       Fresh thiserror-impl v1.0.48
+       Fresh untrusted v0.7.1
+       Fresh spin v0.5.2
+       Fresh tower-service v0.3.2
+       Fresh ring v0.16.20
+       Fresh thiserror v1.0.48
+       Fresh http-body v0.4.5
+       Fresh socket2 v0.4.9
+       Fresh time-core v0.1.1
+       Fresh httpdate v1.0.3
+       Fresh try-lock v0.2.4
+       Fresh want v0.3.1
+       Fresh time-macros v0.2.11
+       Fresh prost-derive v0.11.9
+       Fresh h2 v0.3.21
+       Fresh log v0.4.20
+       Fresh mime v0.3.17
+       Fresh deranged v0.3.8
+       Fresh time v0.3.24
+       Fresh hyper v0.14.27
+       Fresh prost v0.11.9
+       Fresh der v0.7.8
+       Fresh aho-corasick v1.1.1
+       Fresh bitflags v1.3.2
+       Fresh hex v0.4.3
+       Fresh sct v0.6.1
+       Fresh webpki v0.21.4
+       Fresh sha2 v0.10.7
+       Fresh bitflags v2.4.0
+       Fresh lazy_static v1.4.0
+       Fresh indenter v0.3.3
+       Fresh eyre v0.6.8
+       Fresh rustversion v1.0.14
+       Fresh paste v1.0.14
+       Fresh spki v0.7.2
+       Fresh hmac v0.12.1
+       Fresh ff v0.13.0
+       Fresh digest v0.9.0
+       Fresh base16ct v0.2.0
+       Fresh base64 v0.21.4
+       Fresh sec1 v0.7.3
+       Fresh group v0.13.0
+       Fresh pkcs8 v0.10.2
+       Fresh flex-error v0.4.4
+       Fresh async-trait v0.1.73
+       Fresh prost-types v0.11.9
+       Fresh signature v2.1.0
+       Fresh crypto-bigint v0.5.3
+       Fresh num-derive v0.3.3
+       Fresh subtle-encoding v0.5.1
+       Fresh serde_bytes v0.11.12
+       Fresh pin-project-internal v1.1.3
+       Fresh unicode-xid v0.2.4
+       Fresh adler v1.0.2
+       Fresh glob v0.3.1
+       Fresh pin-project v1.1.3
+       Fresh tendermint-proto v0.32.0
+       Fresh elliptic-curve v0.13.5
+       Fresh rfc6979 v0.4.0
+       Fresh futures-executor v0.3.28
+       Fresh ripemd v0.1.3
+       Fresh block-buffer v0.9.0
+       Fresh hashbrown v0.14.0
+       Fresh openssl-probe v0.1.5
+       Fresh minimal-lexical v0.2.1
+       Fresh opaque-debug v0.3.0
+       Fresh sha2 v0.9.9
+       Fresh futures v0.3.28
+       Fresh ecdsa v0.16.8
+       Fresh secp256k1-sys v0.6.1
+       Fresh wasm-bindgen-shared v0.2.87
+       Fresh subtle-ng v2.5.0
+       Fresh tower-layer v0.3.2
+       Fresh bumpalo v3.14.0
+       Fresh wasm-bindgen-backend v0.2.87
+       Fresh curve25519-dalek-ng v4.1.1
+       Fresh k256 v0.13.1
+       Fresh webpki-roots v0.21.1
+       Fresh openssl-sys v0.9.93
+       Fresh libloading v0.7.4
+       Fresh linux-raw-sys v0.4.7
+       Fresh equivalent v1.0.1
+       Fresh strsim v0.10.0
+       Fresh indexmap v2.0.0
+       Fresh rustix v0.38.14
+       Fresh clang-sys v1.6.1
+       Fresh cexpr v0.6.0
+       Fresh axum-core v0.3.4
+       Fresh ed25519-consensus v2.1.0
+       Fresh wasm-bindgen-macro-support v0.2.87
+       Fresh tower v0.4.13
+       Fresh prettyplease v0.2.15
+       Fresh ed25519 v2.2.2
+       Fresh sha1 v0.10.6
+       Fresh tokio-io-timeout v1.2.0
+       Fresh tokio-stream v0.1.14
+       Fresh serde_repr v0.1.16
+       Fresh rustc-hash v1.1.0
+       Fresh matchit v0.7.2
+       Fresh lazycell v1.3.0
+       Fresh sync_wrapper v0.1.2
+       Fresh winnow v0.5.15
+       Fresh foreign-types-shared v0.1.1
+       Fresh peeking_take_while v0.1.2
+       Fresh ident_case v1.0.1
+       Fresh shlex v1.2.0
+       Fresh bindgen v0.65.1
+       Fresh darling_core v0.20.3
+       Fresh foreign-types v0.3.2
+       Fresh axum v0.6.20
+       Fresh tendermint v0.32.0
+       Fresh hyper-timeout v0.4.1
+       Fresh wasm-bindgen-macro v0.2.87
+       Fresh miniz_oxide v0.4.4
+       Fresh num-integer v0.1.45
+       Fresh safe-proc-macro2 v1.0.36
+       Fresh getrandom v0.1.16
+       Fresh crc32fast v1.3.2
+       Fresh openssl-macros v0.1.1
+       Fresh chunked_transfer v1.4.1
+       Fresh bitcoin_hashes v0.11.0
+       Fresh openssl v0.10.57
+       Fresh proc-macro-crate v0.1.5
+       Fresh flate2 v1.0.22
+       Fresh rand_core v0.5.1
+       Fresh safe-quote v1.0.15
+       Fresh wasm-bindgen v0.2.87
+       Fresh tonic v0.9.2
+       Fresh ahash v0.7.6
+       Fresh darling_macro v0.20.3
+       Fresh headers-core v0.2.0
+       Fresh base64-compat v1.0.0
+       Fresh borsh-schema-derive-internal v0.9.3
+       Fresh borsh-derive-internal v0.9.3
+       Fresh filetime v0.2.15
+       Fresh xattr v1.0.1
+       Fresh static_assertions v1.1.0
+       Fresh gimli v0.28.0
+       Fresh keccak v0.1.4
+       Fresh sha3 v0.10.8
+       Fresh addr2line v0.21.0
+       Fresh tar v0.4.40
+       Fresh borsh-derive v0.9.3
+       Fresh headers v0.3.9
+       Fresh darling v0.20.3
+       Fresh hashbrown v0.11.2
+       Fresh js-sys v0.3.64
+       Fresh safe-regex-compiler v0.2.5
+       Fresh proc-macro-error-attr v1.0.4
+       Fresh unicase v2.7.0
+       Fresh native-tls v0.2.11
+       Fresh anyhow v1.0.75
+       Fresh semver v1.0.18
+       Fresh crunchy v0.2.2
+       Fresh rustls-native-certs v0.5.0
+       Fresh tokio-rustls v0.22.0
+       Fresh miniz_oxide v0.7.1
+       Fresh synstructure v0.12.6
+       Fresh ct-logs v0.8.0
+       Fresh informalsystems-pbjson v0.6.0
+       Fresh object v0.32.1
+       Fresh encoding_rs v0.8.33
+       Fresh either v1.9.0
+       Fresh rustc-demangle v0.1.23
+       Fresh regex-syntax v0.7.5
+       Fresh rustc-hex v2.1.0
+       Fresh convert_case v0.4.0
+       Fresh peg-runtime v0.7.0
+       Fresh peg-macros v0.7.0
+       Fresh derive_more v0.99.17
+       Fresh fixed-hash v0.8.0
+       Fresh regex-automata v0.3.8
+       Fresh backtrace v0.3.69
+       Fresh ics23 v0.10.2
+       Fresh hyper-rustls v0.22.1
+       Fresh failure_derive v0.1.8
+       Fresh uint v0.9.5
+       Fresh tokio-native-tls v0.3.1
+       Fresh proc-macro-error v1.0.4
+       Fresh bitcoincore-rpc-json v0.16.0
+       Fresh safe-regex-macro v0.2.5
+       Fresh borsh v0.9.3
+       Fresh librocksdb-sys v0.11.0+8.1.1
+       Fresh bitcoin-private v0.1.0
+       Fresh rand_chacha v0.2.2
+       Fresh is-terminal v0.4.9
+       Fresh pbkdf2 v0.12.2
+       Fresh bs58 v0.5.0
+       Fresh serde_urlencoded v0.7.1
+       Fresh ed-derive v0.3.0
+       Fresh serde_spanned v0.6.3
+       Fresh toml_datetime v0.6.3
+       Fresh toml v0.5.11
+       Fresh impl-serde v0.4.0
+       Fresh atty v0.2.14
+       Fresh same-file v1.0.6
+       Fresh unicode-segmentation v1.10.1
+       Fresh signature v1.6.4
+       Fresh termcolor v1.3.0
+       Fresh utf-8 v0.7.6
+       Fresh home v0.5.5
+       Fresh tungstenite v0.18.0
+       Fresh ed25519 v1.5.3
+       Fresh heck v0.3.3
+       Fresh walkdir v2.4.0
+       Fresh primitive-types v0.12.1
+       Fresh tendermint-config v0.32.0
+       Fresh toml_edit v0.19.15
+       Fresh ed v0.3.0
+       Fresh bip32 v0.5.1
+       Fresh colored v2.0.4
+       Fresh rand v0.7.3
+       Fresh bitcoin_hashes v0.12.0
+       Fresh enum-ordinalize v3.1.13
+       Fresh rocksdb v0.21.0
+       Fresh ibc-proto v0.32.1
+       Fresh safe-regex v0.2.5
+       Fresh hyper-tls v0.5.0
+       Fresh failure v0.1.8
+       Fresh hyper-proxy v0.9.1
+       Fresh secp256k1-sys v0.8.1
+       Fresh num-bigint v0.4.4
+       Fresh standback v0.2.17
+       Fresh proc-macro-hack v0.5.20+deprecated
+       Fresh regex v1.9.5
+       Fresh tendermint-light-client-verifier v0.32.0
+       Fresh peg v0.7.0
+       Fresh ibc-derive v0.3.0 (https://github.com/nomic-io/ibc-rs?rev=91de3c673c59ed0a4344272dee6dd822d1355d59#91de3c67)
+       Fresh cosmos-sdk-proto v0.19.0
+       Fresh curve25519-dalek v3.2.0
+       Fresh secp256k1 v0.24.3
+       Fresh unicode-normalization v0.1.22
+       Fresh ed-derive v0.3.0 (https://github.com/nomic-io/ed?rev=9c0e206ffdb59dacb90f083e004e8080713e6ad8#9c0e206f)
+       Fresh displaydoc v0.2.4
+       Fresh uuid v0.8.2
+       Fresh os_str_bytes v6.5.1
+       Fresh parking v2.1.0
+       Fresh waker-fn v1.1.0
+       Fresh heck v0.4.1
+       Fresh spin v0.9.8
+       Fresh unicode-bidi v0.3.13
+       Fresh bech32 v0.9.1
+       Fresh fastrand v1.9.0
+       Fresh humantime v2.1.0
+       Fresh ascii v1.1.0
+       Fresh ipnet v2.8.0
+       Fresh iana-time-zone v0.1.57
+       Fresh arrayvec v0.7.4
+       Fresh fastrand v2.0.0
+       Fresh tempfile v3.8.0
+       Fresh rust_decimal v1.32.0
+       Fresh chrono v0.4.31
+       Fresh reqwest v0.11.20
+       Fresh tiny_http v0.10.0
+       Fresh env_logger v0.9.3
+       Fresh futures-lite v1.13.0
+       Fresh bitcoin v0.29.2
+       Fresh multer v2.1.0
+       Fresh clap_derive v3.2.25
+       Fresh clap_lex v0.2.4
+       Fresh tendermint-rpc v0.32.0
+       Fresh ibc v0.44.1 (https://github.com/nomic-io/ibc-rs?rev=91de3c673c59ed0a4344272dee6dd822d1355d59#91de3c67)
+       Fresh ed v0.3.0 (https://github.com/nomic-io/ed?rev=9c0e206ffdb59dacb90f083e004e8080713e6ad8#9c0e206f)
+       Fresh ed25519-dalek v1.0.1
+       Fresh cosmrs v0.14.0
+       Fresh time-macros-impl v0.1.2
+       Fresh num-rational v0.4.1
+       Fresh secp256k1 v0.27.0
+       Fresh merk v2.0.0 (https://github.com/nomic-io/merk?rev=088e2bb7998cb3704fc00183c9c9fd577982ec61#088e2bb7)
+       Fresh mime_guess v2.0.4
+       Fresh educe v0.4.23
+       Fresh orga-macros v0.3.1 (https://github.com/nomic-io/orga.git?rev=38682a1eafc9c3566aa5de4601a1aff06eb79c4f#38682a1e)
+       Fresh prometheus v0.13.3
+       Fresh tokio-tungstenite v0.18.0
+       Fresh rust_decimal_macros v1.32.0
+       Fresh itertools v0.10.5
+       Fresh web-sys v0.3.64
+       Fresh wasm-bindgen-futures v0.4.37
+       Fresh serde-wasm-bindgen v0.5.0
+       Fresh jsonrpc-async v2.0.2
+       Fresh nom v7.1.3
+       Fresh abci2 v0.1.3 (https://github.com/nomic-io/abci2?rev=26b345ed839123f33596a2f3b5640f621c233797#26b345ed)
+       Fresh rustls-pemfile v1.0.3
+       Fresh combine v4.6.6
+       Fresh csv-core v0.1.10
+       Fresh bincode v1.3.3
+       Fresh kstring v1.0.6
+       Fresh textwrap v0.16.0
+       Fresh hex-literal v0.4.1
+       Fresh scoped-tls v1.0.1
+       Fresh seq-macro v0.3.5
+       Fresh is_executable v1.0.1
+       Fresh orga v0.3.1 (https://github.com/nomic-io/orga.git?rev=38682a1eafc9c3566aa5de4601a1aff06eb79c4f#38682a1e)
+       Fresh warp v0.3.5
+       Fresh clap v3.2.25
+       Fresh toml_edit v0.13.4
+       Fresh csv v1.2.2
+       Fresh bitcoincore-rpc-async2 v4.0.2
+       Fresh prometheus_exporter v0.8.5
+       Fresh time-macros v0.1.1
+       Fresh const_fn v0.4.9
+       Fresh bitcoin-script v0.1.3
+       Fresh pretty_env_logger v0.4.0 (https://github.com/seanmonstar/pretty-env-logger?rev=f9e35b6dbbf06de55222c944c9e1e176ce73b3a7#f9e35b6d)
+       Fresh idna v0.4.0
+       Fresh toml v0.7.8
+       Fresh serde-big-array v0.4.1
+       Fresh matches v0.1.10
+       Fresh split-iter v0.1.0
+       Fresh idna v0.2.3
+       Fresh url v2.4.1
+       Fresh time v0.2.27
+       Fresh cookie v0.14.4
+       Fresh publicsuffix v1.5.6
+       Fresh bzip2-sys v0.1.11+1.0.8
+       Fresh serde_json v1.0.107
+warning: unused import: `std::fmt::Display`
+  --> src/utils.rs:46:5
+   |
+46 | use std::fmt::Display;
+   |     ^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: constant `DEFAULT_FUNDED_AMOUNT` is never used
+  --> src/app.rs:73:7
+   |
+73 | const DEFAULT_FUNDED_AMOUNT: u64 = 1_000_000_000_000_000_000;
+   |       ^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `nomic` (lib) generated 2 warnings (run `cargo fix --lib -p nomic` to apply 1 suggestion)
+       Fresh base64 v0.13.1
+       Fresh rustls v0.19.1
+       Fresh cookie_store v0.12.0
+       Fresh bzip2 v0.4.4
+       Fresh qstring v0.7.2
+       Fresh time v0.1.45
+       Fresh byteorder v1.4.3
+       Fresh zip v0.5.13
+       Fresh ureq v1.5.5
+       Fresh libz-sys v1.1.12
+       Fresh jsonrpc v0.12.1
+       Fresh bitcoincore-rpc v0.16.0
+       Fresh curl-sys v0.4.66+curl-8.3.0
+       Fresh crossbeam-utils v0.8.16
+       Fresh which v4.4.2
+       Fresh dashmap v5.5.3
+       Fresh serial_test_derive v2.0.0
+       Fresh serial_test v2.0.0
+       Fresh bitcoind v0.27.1
+       Fresh crossbeam-channel v0.5.8
+       Fresh curl v0.4.44
+       Fresh mutagen v0.1.2
+       Fresh urlencoding v2.1.3
+warning: unused imports: `ChildNumber`, `PubkeyHash`
+    --> src/bitcoin/checkpoint.rs:2437:23
+     |
+2437 |         util::bip32::{ChildNumber, ExtendedPrivKey, ExtendedPubKey},
+     |                       ^^^^^^^^^^^
+2438 |         OutPoint, PubkeyHash, Script, Txid,
+     |                   ^^^^^^^^^^
+     |
+     = note: `#[warn(unused_imports)]` on by default
+
+warning: unused imports: `PublicKey`, `SecretKey`
+    --> src/bitcoin/checkpoint.rs:2443:21
+     |
+2443 |         secp256k1::{PublicKey, SecretKey},
+     |                     ^^^^^^^^^  ^^^^^^^^^
+
+warning: unused import: `rand::Rng`
+    --> src/bitcoin/checkpoint.rs:2446:9
+     |
+2446 |     use rand::Rng;
+     |         ^^^^^^^^^
+
+warning: unused import: `threshold_sig::Share`
+    --> src/bitcoin/checkpoint.rs:2449:48
+     |
+2449 |     use crate::bitcoin::{signatory::Signatory, threshold_sig::Share};
+     |                                                ^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `fs`
+    --> src/bitcoin/mod.rs:1214:30
+     |
+1214 |     use std::{cell::RefCell, fs, rc::Rc};
+     |                              ^^
+
+warning: unused import: `std::fmt::Display`
+  --> src/utils.rs:46:5
+   |
+46 | use std::fmt::Display;
+   |     ^^^^^^^^^^^^^^^^^
+
+warning: unused variable: `btc_height`
+    --> src/bitcoin/checkpoint.rs:2736:34
+     |
+2736 |         let confirm_cp = |index, btc_height| {
+     |                                  ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_btc_height`
+     |
+     = note: `#[warn(unused_variables)]` on by default
+
+warning: variable does not need to be mutable
+    --> src/bitcoin/checkpoint.rs:2695:17
+     |
+2695 |             let mut input = Input::new(
+     |                 ----^^^^^
+     |                 |
+     |                 help: remove this `mut`
+     |
+     = note: `#[warn(unused_mut)]` on by default
+
+warning: unused variable: `btc_height`
+    --> src/bitcoin/checkpoint.rs:2951:34
+     |
+2951 |         let confirm_cp = |index, btc_height| {
+     |                                  ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_btc_height`
+
+warning: variable does not need to be mutable
+    --> src/bitcoin/checkpoint.rs:2910:17
+     |
+2910 |             let mut input = Input::new(
+     |                 ----^^^^^
+     |                 |
+     |                 help: remove this `mut`
+
+warning: unused `std::result::Result` that must be used
+    --> src/bitcoin/checkpoint.rs:2662:9
+     |
+2662 |         sig_keys.insert([0; 32], Xpub::new(xpub));
+     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: this `Result` may be an `Err` variant, which should be handled
+     = note: `#[warn(unused_must_use)]` on by default
+help: use `let _ = ...` to ignore the resulting value
+     |
+2662 |         let _ = sig_keys.insert([0; 32], Xpub::new(xpub));
+     |         +++++++
+
+warning: unused `std::result::Result` that must be used
+    --> src/bitcoin/checkpoint.rs:2872:9
+     |
+2872 |         sig_keys.insert([0; 32], Xpub::new(xpub));
+     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: this `Result` may be an `Err` variant, which should be handled
+help: use `let _ = ...` to ignore the resulting value
+     |
+2872 |         let _ = sig_keys.insert([0; 32], Xpub::new(xpub));
+     |         +++++++
+
+warning: `nomic` (lib test) generated 13 warnings (1 duplicate) (run `cargo fix --lib -p nomic --tests` to apply 10 suggestions)
+       Dirty nomic v7.0.0 (/media/lenovo/DATABOX/Developer/nomic): the file `tests/bitcoin.rs` has changed (1708078178.629178700s, 48m 33s after last build at 1708075265.386876900s)
+   Compiling nomic v7.0.0 (/media/lenovo/DATABOX/Developer/nomic)
+     Running `/home/lenovo/.rustup/toolchains/nightly-2023-05-08-x86_64-unknown-linux-gnu/bin/rustc --crate-name bitcoin --edition=2021 tests/bitcoin.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 --test --cfg 'feature="bitcoincore-rpc-async"' --cfg 'feature="clap"' --cfg 'feature="cosmos-sdk-proto"' --cfg 'feature="csv"' --cfg 'feature="default"' --cfg 'feature="devnet"' --cfg 'feature="feat-ibc"' --cfg 'feature="full"' --cfg 'feature="home"' --cfg 'feature="legacy-bin"' --cfg 'feature="rand"' --cfg 'feature="reqwest"' --cfg 'feature="tendermint-rpc"' --cfg 'feature="testnet"' --cfg 'feature="tokio"' --cfg 'feature="warp"' -C metadata=8ac3789af0550f6e -C extra-filename=-8ac3789af0550f6e --out-dir /media/lenovo/DATABOX/Developer/nomic/target/debug/deps -C incremental=/media/lenovo/DATABOX/Developer/nomic/target/debug/incremental -L dependency=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps --extern base64=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libbase64-2604901668e83e1c.rlib --extern bech32=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libbech32-40649175efd8104a.rlib --extern bitcoin=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libbitcoin-9b12be35480c97ff.rlib --extern bitcoin_script=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libbitcoin_script-ecca05c707c862b2.so --extern bitcoin_hashes=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libbitcoin_hashes-309576b6ff4bc4ec.rlib --extern bitcoincore_rpc_async=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libbitcoincore_rpc_async-8eb01e8e73596d45.rlib --extern bitcoind=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libbitcoind-7c9e87b65e442b96.rlib --extern bytes=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libbytes-3c828c6ba5213625.rlib --extern chrono=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libchrono-6fafe26d06a3a445.rlib --extern clap=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libclap-9d58f3dc4dfdea0c.rlib --extern cosmos_sdk_proto=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libcosmos_sdk_proto-375eb793339674f4.rlib --extern crossbeam_channel=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libcrossbeam_channel-4cd3108f34885775.rlib --extern csv=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libcsv-f57f4647e8f0eeea.rlib --extern curl=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libcurl-f8de23e446986ccc.rlib --extern derive_more=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libderive_more-80806f01c43d1d8a.so --extern ed=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libed-d683a09838b161d5.rlib --extern futures=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libfutures-bfb9294f120bc087.rlib --extern hex=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libhex-616a8efef68c9340.rlib --extern home=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libhome-09d306e52ba18663.rlib --extern ics23=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libics23-69b8c77e3be5eea5.rlib --extern js_sys=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libjs_sys-f49f163ef1348b05.rlib --extern lazy_static=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/liblazy_static-c607a665f1cc4401.rlib --extern log=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/liblog-d04613baff4c9406.rlib --extern mutagen=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libmutagen-1ba4df135ef9f167.rlib --extern nomic=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libnomic-767e3ef49dbf1884.rlib --extern orga=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/liborga-946cbb520ed47a0a.rlib --extern pretty_env_logger=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libpretty_env_logger-7180ca3e1d09e605.rlib --extern prometheus_exporter=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libprometheus_exporter-9895608d9e738e08.rlib --extern rand=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/librand-fccf933e30794597.rlib --extern reqwest=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libreqwest-40e8f44eb19a677c.rlib --extern semver=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libsemver-306315ce791005f9.rlib --extern serde=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libserde-14553a8680942dc9.rlib --extern serde_big_array=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libserde_big_array-ad6a6d7a8d70b736.rlib --extern serde_json=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libserde_json-2596b35d593807f5.rlib --extern serial_test=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libserial_test-18dfe40d7b0a11c8.rlib --extern sha2=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libsha2-4b185de62f7775eb.rlib --extern split_iter=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libsplit_iter-c4b1eddae8506ab7.rlib --extern tempfile=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libtempfile-b1b617c0a361cc56.rlib --extern tendermint_rpc=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libtendermint_rpc-3457c5691e53ef60.rlib --extern thiserror=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libthiserror-c88a4853d8e31a06.rlib --extern tokio=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libtokio-38ceef285479210f.rlib --extern toml=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libtoml-fc1c82cb22d257ac.rlib --extern toml_edit=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libtoml_edit-9a6d2d148ce6b7e5.rlib --extern urlencoding=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/liburlencoding-71f710cfecf19fdc.rlib --extern warp=/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/libwarp-91d9619a190e54f6.rlib -L native=/media/lenovo/DATABOX/Developer/nomic/target/debug/build/secp256k1-sys-aaf827cec7db2630/out -L native=/media/lenovo/DATABOX/Developer/nomic/target/debug/build/curl-sys-7d14f9296d2fce3f/out/build -L native=/media/lenovo/DATABOX/Developer/nomic/target/debug/build/libz-sys-809a3d580d9b3e11/out/lib -L native=/media/lenovo/DATABOX/Developer/nomic/target/debug/build/libz-sys-809a3d580d9b3e11/out/lib -L native=/media/lenovo/DATABOX/Developer/nomic/target/debug/build/librocksdb-sys-c2e40983fbefc701/out -L native=/media/lenovo/DATABOX/Developer/nomic/target/debug/build/secp256k1-sys-1b45b61240ce412b/out -L native=/media/lenovo/DATABOX/Developer/nomic/target/debug/build/ring-c21f37da93566693/out`
+warning: unused import: `Deposit`
+  --> tests/bitcoin.rs:19:37
+   |
+19 | use nomic::bitcoin::deposit_index::{Deposit, DepositInfo};
+   |                                     ^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: unused variable: `e`
+   --> tests/bitcoin.rs:554:21
+    |
+554 |                 Err(e) => {
+    |                     ^ help: if this is intentional, prefix it with an underscore: `_e`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `node_child`
+   --> tests/bitcoin.rs:741:9
+    |
+741 |     let node_child = node.run().await.unwrap();
+    |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_node_child`
+
+warning: unused variable: `node_child`
+    --> tests/bitcoin.rs:1014:9
+     |
+1014 |     let node_child = node.await.run().await.unwrap();
+     |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_node_child`
+
+warning: unused variable: `node_child`
+    --> tests/bitcoin.rs:1571:9
+     |
+1571 |     let node_child = node.await.run().await.unwrap();
+     |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_node_child`
+
+warning: unused variable: `sent_txid`
+    --> tests/bitcoin.rs:1670:13
+     |
+1670 |         let sent_txid = wallet
+     |             ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_sent_txid`
+
+warning: unused variable: `node_child`
+    --> tests/bitcoin.rs:1810:9
+     |
+1810 |     let node_child = node.await.run().await.unwrap();
+     |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_node_child`
+
+warning: unused `std::result::Result` that must be used
+    --> tests/bitcoin.rs:1708:9
+     |
+1708 | /         broadcast_deposit_addr(
+1709 | |             funded_accounts[1].address.to_string(),
+1710 | |             expiring_deposit_address.sigset_index,
+1711 | |             "http://localhost:8999".to_string(),
+1712 | |             expiring_deposit_address.deposit_addr.clone(),
+1713 | |         )
+1714 | |         .await;
+     | |______________^
+     |
+     = note: this `Result` may be an `Err` variant, which should be handled
+     = note: `#[warn(unused_must_use)]` on by default
+help: use `let _ = ...` to ignore the resulting value
+     |
+1708 |         let _ = broadcast_deposit_addr(
+     |         +++++++
+
+warning: `nomic` (test "bitcoin") generated 8 warnings (run `cargo fix --test "bitcoin"` to apply 7 suggestions)
+warning: unused import: `std::time::Duration`
+ --> tests/node.rs:8:5
+  |
+8 | use std::time::Duration;
+  |     ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: `nomic` (test "node") generated 1 warning (run `cargo fix --test "node"` to apply 1 suggestion)
+    Finished test [unoptimized + debuginfo] target(s) in 1m 53s
+     Running `/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/nomic-569410d33679e6cb bitcoin --ignored`
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 32 filtered out; finished in 0.00s
+
+     Running `/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/append_airdrop_snapshot-460dfcf1b24ab073 bitcoin --ignored`
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running `/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/create_airdrop_snapshot-e9ecdce16b1efbf7 bitcoin --ignored`
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running `/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/create_checkpoint-e9bea8ded6f59faf bitcoin --ignored`
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running `/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/get_reserve_scripts-77fa06646c5bc6f2 bitcoin --ignored`
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running `/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/nomic-29468b19c2ebe78e bitcoin --ignored`
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running `/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/store_diff-5b54d1508f1f5773 bitcoin --ignored`
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running `/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/bitcoin-8ac3789af0550f6e bitcoin --ignored`
+
+running 1 test
+ INFO  orga::tendermint > Installing Tendermint to /tmp/.tmpXz2t5Y/tendermint
+ INFO  orga::tendermint > Confirmed correct Tendermint zip hash
+ INFO  nomic::utils     > Scanning for blocks...
+ INFO  orga::abci::server > State is at height 0
+ INFO  orga::tendermint   > Started Tendermint
+ INFO  orga::tendermint   > Executed block 1. txs=0
+ INFO  nomic::bitcoin::relayer > Starting header relay...
+ INFO  nomic::bitcoin::relayer > Starting deposit relay...
+ INFO  nomic::bitcoin::relayer > Keeping track of deposit addresses at /tmp/.tmpXz2t5Y/watched-addrs.csv
+ INFO  warp::server            > Server::run; addr=0.0.0.0:8999
+ INFO  warp::server            > listening on http://0.0.0.0:8999
+ INFO  nomic::bitcoin::relayer > Starting checkpoint relay...
+ INFO  nomic::bitcoin::relayer > Starting emergency disbursal transaction relay...
+ INFO  nomic::utils            > Declaring validator...
+ INFO  nomic::bitcoin::relayer > Sidechain header state is up-to-date:
+	hash=25f2f22389a9072c0e8d5fee8b97b8b2a00edf63c2973df1768ec7bef136aac3
+	height=1000
+ INFO  orga::tendermint        > Executed block 2. txs=0
+ INFO  orga::tendermint        > Executed block 3. txs=1
+ INFO  nomic::utils            > Validator declared
+ INFO  orga::tendermint        > Executed block 4. txs=1
+ INFO  nomic::utils            > Declaring validator...
+ ERROR nomic::bitcoin::relayer > Deposit relay error: JSON-RPC error: RPC error response: RpcError { code: -5, message: "Block not found", data: None }
+ INFO  orga::tendermint        > Executed block 5. txs=1
+ INFO  nomic::utils            > Validator declared
+ INFO  orga::tendermint        > Executed block 6. txs=1
+ INFO  bitcoin                 > Setting recovery address...
+ INFO  orga::tendermint        > Executed block 7. txs=1
+ INFO  bitcoin                 > Validator declared
+ INFO  bitcoin                 > [DEBUG] Nomic Address: Address { bytes: [217, 121, 69, 114, 22, 198, 201, 4, 254, 182, 66, 96, 33, 22, 223, 68, 88, 214, 88, 75] } Recovery Address: "n1LrCkrZFvYgLsc4i8wHprMqYbHKThKLro"
+ INFO  nomic::utils            > Scanning for bitcoin header 1120...
+ INFO  nomic::bitcoin::relayer > Relaying headers...
+	hash=25f2f22389a9072c0e8d5fee8b97b8b2a00edf63c2973df1768ec7bef136aac3
+	height=1000
+	batch_len=121
+ ERROR nomic::bitcoin::relayer > Header relay error: Call Error: code 1: App Error: Provided redundant header.
+ INFO  orga::tendermint        > Executed block 8. txs=0
+ INFO  orga::tendermint        > Executed block 9. txs=0
+ ERROR nomic::bitcoin::relayer > Deposit relay error: JSON-RPC error: RPC error response: RpcError { code: -5, message: "Block not found", data: None }
+ INFO  nomic::bitcoin::relayer > Relaying headers...
+	hash=39231c08f1873285f1593dc9c9055fbd916d50ae692c2e319bce43825024bd1f
+	height=1001
+	batch_len=120
+ INFO  orga::tendermint        > Executed block 10. txs=1
+ INFO  nomic::utils            > Found bitcoin header 1120
+ INFO  nomic::utils            > Polling for updated balance...
+ INFO  nomic::bitcoin::relayer > Relayed headers
+ INFO  nomic::utils            > Polling for active sigset...
+ INFO  nomic::bitcoin::relayer > Sidechain header state is up-to-date:
+	hash=3eb2c37e3156f53f385f60456f66821aedc2ca45dba8f08b674829a441019349
+	height=1120
+ INFO  nomic::utils            > Scanning for signatory key...
+ INFO  bitcoin                 > Generating deposit address for nomic1m9u52uskcmysfl4kgfszz9klg3vdvkzt4dz070...
+ INFO  bitcoin                 > Broadcasting deposit address to relayer...
+ INFO  nomic::utils            > Polling for updated balance...
+ INFO  nomic::utils            > Scanning for bitcoin header 1124...
+ INFO  nomic::bitcoin::relayer > Relaying headers...
+	hash=1076499054243b2244afe60ef7935da7db357adbceb4121ab21ac6fbe5bed034
+	height=1121
+	batch_len=4
+ INFO  orga::tendermint        > Executed block 11. txs=1
+ INFO  nomic::utils            > Found bitcoin header 1124
+ INFO  nomic::utils            > Scanning for signing checkpoint...
+ INFO  nomic::bitcoin::relayer > Relayed headers
+ INFO  nomic::bitcoin::relayer > Sidechain header state is up-to-date:
+	hash=058f28db10f6d610c0782fa8fb61cfad38c18428c3c76d3a6f10816069ac77c0
+	height=1124
+ INFO  nomic::bitcoin::signer  > Starting recovery transaction signer...
+ INFO  nomic::bitcoin::signer  > Starting checkpoint signer...
+ INFO  orga::tendermint        > Executed block 12. txs=0
+ INFO  orga::tendermint        > Executed block 13. txs=0
+ INFO  orga::tendermint        > Executed block 14. txs=1
+ INFO  nomic::bitcoin::relayer > Relayed deposit: 1000000000 sats, Address(Address { bytes: [217, 121, 69, 114, 22, 198, 201, 4, 254, 182, 66, 96, 33, 22, 223, 68, 88, 214, 88, 75] })
+ INFO  orga::tendermint        > Executed block 15. txs=0
+ INFO  orga::tendermint        > Executed block 16. txs=0
+ INFO  nomic::bitcoin::signer  > Starting recovery transaction signer...
+ INFO  nomic::bitcoin::signer  > Starting checkpoint signer...
+ INFO  orga::tendermint        > Executed block 17. txs=0
+ INFO  orga::tendermint        > Executed block 18. txs=0
+ INFO  orga::tendermint        > Executed block 19. txs=0
+ INFO  nomic::bitcoin::checkpoint > Reserve value: 999997450 - Intermediate tx out value: 989996871 // Debug reserve value
+ INFO  orga::tendermint           > Executed block 20. txs=0
+ INFO  nomic::utils               > Polling for updated balance...
+ INFO  nomic::utils               > Scanning for signed checkpoints...
+ INFO  orga::tendermint           > Executed block 21. txs=0
+ INFO  orga::tendermint           > Executed block 22. txs=0
+ INFO  nomic::bitcoin::signer     > Signing checkpoint (1 inputs)...
+ INFO  orga::tendermint           > Executed block 23. txs=1
+ INFO  nomic::bitcoin::signer     > Submitted signatures
+ INFO  orga::tendermint           > Executed block 24. txs=0
+ INFO  orga::tendermint           > Executed block 25. txs=0
+ INFO  orga::tendermint           > Executed block 26. txs=0
+ INFO  orga::tendermint           > Executed block 27. txs=0
+ INFO  orga::tendermint           > Executed block 28. txs=0
+ INFO  nomic::bitcoin::signer     > Signing checkpoint (1 inputs)...
+ INFO  orga::tendermint           > Executed block 29. txs=1
+ INFO  nomic::bitcoin::signer     > Submitted signatures
+ INFO  orga::tendermint           > Executed block 30. txs=0
+ INFO  orga::tendermint           > Executed block 31. txs=0
+ INFO  orga::tendermint           > Executed block 32. txs=0
+ INFO  orga::tendermint           > Executed block 33. txs=0
+ INFO  orga::tendermint           > Executed block 34. txs=0
+ INFO  nomic::bitcoin::signer     > Signing checkpoint (1 inputs)...
+ INFO  nomic::bitcoin::checkpoint > Checkpoint signing complete Adapter { inner: Transaction { version: 1, lock_time: PackedLockTime(0), input: [TxIn { previous_output: OutPoint { txid: 64e105b3fef2359a6f75cb49158ee2e6dc1479f11cdbab7b2861d857f6834c77, vout: 0 }, script_sig: Script(), sequence: Sequence(4294967295), witness: Witness { content: [71, 48, 68, 2, 32, 80, 112, 239, 227, 19, 215, 226, 99, 95, 8, 29, 214, 91, 96, 145, 84, 208, 74, 175, 50, 17, 253, 50, 199, 216, 213, 179, 107, 147, 7, 78, 233, 2, 32, 9, 52, 228, 116, 88, 127, 185, 185, 159, 114, 151, 115, 217, 214, 175, 154, 162, 177, 241, 245, 28, 18, 145, 117, 77, 102, 106, 115, 217, 141, 243, 5, 1, 70, 33, 3, 211, 83, 126, 107, 50, 155, 198, 193, 141, 179, 188, 88, 127, 60, 9, 104, 164, 15, 191, 226, 253, 225, 90, 59, 160, 195, 203, 28, 30, 199, 90, 167, 172, 99, 3, 160, 134, 1, 103, 0, 104, 3, 144, 95, 1, 160, 20, 217, 121, 69, 114, 22, 198, 201, 4, 254, 182, 66, 96, 33, 22, 223, 68, 88, 214, 88, 75, 117], witness_elements: 2, last: 72, second_to_last: 0 } }], output: [TxOut { value: 999997450, script_pubkey: Script(OP_0 OP_PUSHBYTES_32 f989afa508af1fa9ef849bcf9ad00148292cf07bd867ba7a69aaa4ceb5665a96) }, TxOut { value: 0, script_pubkey: Script(OP_RETURN OP_PUSHBYTES_32 52c26fc4fbdd9d9580b00cc81a6664c0e88fb8a69ca14d05367563a07a9a60fb) }] } }
+ INFO  nomic::bitcoin::checkpoint > Checkpoint signing complete Adapter { inner: Transaction { version: 1, lock_time: PackedLockTime(0), input: [TxIn { previous_output: OutPoint { txid: 64e105b3fef2359a6f75cb49158ee2e6dc1479f11cdbab7b2861d857f6834c77, vout: 0 }, script_sig: Script(), sequence: Sequence(4294967295), witness: Witness { content: [71, 48, 68, 2, 32, 80, 112, 239, 227, 19, 215, 226, 99, 95, 8, 29, 214, 91, 96, 145, 84, 208, 74, 175, 50, 17, 253, 50, 199, 216, 213, 179, 107, 147, 7, 78, 233, 2, 32, 9, 52, 228, 116, 88, 127, 185, 185, 159, 114, 151, 115, 217, 214, 175, 154, 162, 177, 241, 245, 28, 18, 145, 117, 77, 102, 106, 115, 217, 141, 243, 5, 1, 70, 33, 3, 211, 83, 126, 107, 50, 155, 198, 193, 141, 179, 188, 88, 127, 60, 9, 104, 164, 15, 191, 226, 253, 225, 90, 59, 160, 195, 203, 28, 30, 199, 90, 167, 172, 99, 3, 160, 134, 1, 103, 0, 104, 3, 144, 95, 1, 160, 20, 217, 121, 69, 114, 22, 198, 201, 4, 254, 182, 66, 96, 33, 22, 223, 68, 88, 214, 88, 75, 117], witness_elements: 2, last: 72, second_to_last: 0 } }], output: [TxOut { value: 999997450, script_pubkey: Script(OP_0 OP_PUSHBYTES_32 f989afa508af1fa9ef849bcf9ad00148292cf07bd867ba7a69aaa4ceb5665a96) }, TxOut { value: 0, script_pubkey: Script(OP_RETURN OP_PUSHBYTES_32 52c26fc4fbdd9d9580b00cc81a6664c0e88fb8a69ca14d05367563a07a9a60fb) }] } }
+ INFO  orga::tendermint           > Executed block 35. txs=1
+ INFO  nomic::bitcoin::signer     > Submitted signatures
+ INFO  orga::tendermint           > Executed block 36. txs=0
+ INFO  nomic::bitcoin::relayer    > Last checkpoint tx: 3311ad60ef076f41b5e0eb358f011f1732a88b94fc1cfdc7f1aa1be7cfbf10f0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  nomic::bitcoin::relayer    > Relayed checkpoint: 3311ad60ef076f41b5e0eb358f011f1732a88b94fc1cfdc7f1aa1be7cfbf10f0
+ INFO  orga::tendermint           > Executed block 37. txs=0
+ INFO  nomic::utils               > Polling for updated balance...
+ INFO  nomic::utils               > Scanning for bitcoin header 1127... // line 471 in bitcoin.rs
+ INFO  nomic::bitcoin::relayer    > Relaying headers...
+	hash=49b7a2fb017d15eb1781a8c7241d216650a73ae761baee0ceba01d244bd0267e
+	height=1125
+	batch_len=3
+ INFO  orga::tendermint           > Executed block 38. txs=1
+ INFO  nomic::utils               > Found bitcoin header 1127 // Đến đây mới đào được 3 block như ở line 441
+ INFO  bitcoin                    > Generating deposit address for nomic1e22ymzzxarxqgtyge0v2h3gklkvzxelv77yh4n...
+ INFO  nomic::bitcoin::relayer    > Relayed headers
+ INFO  bitcoin                    > Broadcasting deposit address to relayer...
+ INFO  nomic::bitcoin::relayer    > Sidechain header state is up-to-date:
+	hash=05f85b751bd439cf9146cfaaf0074f502d388994dddb726f2c4be0b1409a827d
+	height=1127
+ INFO  nomic::utils               > Scanning for bitcoin header 1131...
+ INFO  nomic::bitcoin::relayer    > Relaying headers...
+	hash=7a0ed647944b8ef505bf2ddd6893ac9c3da1848dfb7b488216bb8963df68dff3
+	height=1128
+	batch_len=4
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  orga::tendermint           > Executed block 39. txs=1
+ INFO  nomic::utils               > Found bitcoin header 1131 // Đào tiếp 3 block ở line 471
+ INFO  nomic::utils               > Scanning for signed checkpoints... // Chờ đủ signed checkpoint cho tran deposit 0.4 btc
+ INFO  nomic::bitcoin::relayer    > Relayed headers
+ INFO  nomic::bitcoin::relayer    > Sidechain header state is up-to-date:
+	hash=317c49395811302831d92d1eac0d85711a1b9f1414669a2bd07f7985a716e46e
+	height=1131
+ INFO  orga::tendermint           > Executed block 40. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  orga::tendermint           > Executed block 41. txs=0
+ INFO  orga::tendermint           > Executed block 42. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  orga::tendermint           > Executed block 43. txs=1
+ INFO  nomic::bitcoin::relayer    > Relayed deposit: 40000000 sats, Address(Address { bytes: [202, 148, 77, 136, 70, 232, 204, 4, 44, 136, 203, 216, 171, 197, 22, 253, 152, 35, 103, 236] })
+ INFO  nomic::bitcoin::checkpoint > Reserve value: 1039991290 - Intermediate tx out value: 989996871 // Debug excess out
+ INFO  orga::tendermint           > Executed block 44. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  orga::tendermint           > Executed block 45. txs=0
+ INFO  nomic::bitcoin::signer     > Signing checkpoint (1 inputs)...
+test bitcoin_test has been running for over 60 seconds
+ INFO  orga::tendermint           > Executed block 46. txs=1
+ INFO  nomic::bitcoin::signer     > Submitted signatures
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  orga::tendermint           > Executed block 47. txs=0
+ INFO  orga::tendermint           > Executed block 48. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  orga::tendermint           > Executed block 49. txs=0
+ INFO  orga::tendermint           > Executed block 50. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  orga::tendermint           > Executed block 51. txs=0
+ INFO  nomic::bitcoin::signer     > Signing checkpoint (1 inputs)...
+ INFO  orga::tendermint           > Executed block 52. txs=1
+ INFO  nomic::bitcoin::signer     > Submitted signatures
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  orga::tendermint           > Executed block 53. txs=0
+ INFO  orga::tendermint           > Executed block 54. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  orga::tendermint           > Executed block 55. txs=0
+ INFO  orga::tendermint           > Executed block 56. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: bae9979da547ef4f0693c82797d881abcecfe49c079b866e40878c8281c317d3
+ INFO  orga::tendermint           > Executed block 57. txs=0
+ INFO  nomic::bitcoin::signer     > Signing checkpoint (2 inputs)...
+ INFO  nomic::bitcoin::checkpoint > Checkpoint signing complete Adapter { inner: Transaction { version: 1, lock_time: PackedLockTime(0), input: [TxIn { previous_output: OutPoint { txid: 3311ad60ef076f41b5e0eb358f011f1732a88b94fc1cfdc7f1aa1be7cfbf10f0, vout: 0 }, script_sig: Script(), sequence: Sequence(4294967295), witness: Witness { content: [71, 48, 68, 2, 32, 108, 66, 57, 210, 210, 43, 155, 105, 28, 107, 155, 160, 59, 89, 89, 157, 152, 68, 226, 4, 47, 39, 233, 146, 229, 117, 119, 114, 141, 7, 142, 217, 2, 32, 51, 56, 64, 47, 254, 158, 125, 197, 52, 140, 120, 72, 244, 47, 2, 191, 141, 89, 125, 151, 212, 132, 156, 7, 108, 57, 0, 117, 161, 141, 10, 189, 1, 51, 33, 3, 211, 83, 126, 107, 50, 155, 198, 193, 141, 179, 188, 88, 127, 60, 9, 104, 164, 15, 191, 226, 253, 225, 90, 59, 160, 195, 203, 28, 30, 199, 90, 167, 172, 99, 3, 160, 134, 1, 103, 0, 104, 3, 144, 95, 1, 160, 1, 0, 117], witness_elements: 2, last: 72, second_to_last: 0 } }, TxIn { previous_output: OutPoint { txid: 004e0d2c242446b3002845751701935fb2cc54fc83689a5e72f011830c103918, vout: 0 }, script_sig: Script(), sequence: Sequence(4294967295), witness: Witness { content: [0, 72, 48, 69, 2, 33, 0, 133, 204, 108, 3, 170, 52, 220, 227, 203, 160, 36, 5, 123, 135, 74, 31, 237, 205, 243, 92, 128, 169, 140, 130, 247, 108, 9, 39, 16, 236, 107, 122, 2, 32, 104, 253, 121, 131, 133, 6, 19, 91, 212, 255, 219, 116, 128, 119, 245, 44, 245, 127, 68, 214, 168, 67, 135, 161, 115, 220, 20, 243, 152, 201, 31, 102, 1, 112, 33, 2, 100, 199, 22, 204, 248, 131, 116, 4, 21, 36, 69, 204, 207, 88, 195, 30, 41, 232, 244, 45, 98, 101, 33, 132, 67, 91, 48, 62, 130, 229, 158, 188, 172, 99, 3, 160, 134, 1, 103, 0, 104, 124, 33, 2, 152, 227, 96, 239, 31, 6, 57, 193, 17, 4, 116, 94, 174, 42, 135, 81, 146, 74, 8, 18, 132, 232, 171, 56, 189, 127, 109, 75, 250, 78, 127, 196, 172, 99, 2, 160, 15, 147, 104, 3, 160, 109, 1, 160, 20, 202, 148, 77, 136, 70, 232, 204, 4, 44, 136, 203, 216, 171, 197, 22, 253, 152, 35, 103, 236, 117], witness_elements: 3, last: 74, second_to_last: 1 } }], output: [TxOut { value: 1039991290, script_pubkey: Script(OP_0 OP_PUSHBYTES_32 9f144d8bc2f55f59015b0c3365006d4d4ea2ab040264c423e97e23c235600569) }, TxOut { value: 0, script_pubkey: Script(OP_RETURN OP_PUSHBYTES_32 f49e56a581b18b80177210e289d1cb5d1ad72f93dafda0f0eeede51ae13cd57a) }] } }
+ INFO  nomic::bitcoin::checkpoint > Checkpoint signing complete Adapter { inner: Transaction { version: 1, lock_time: PackedLockTime(0), input: [TxIn { previous_output: OutPoint { txid: 3311ad60ef076f41b5e0eb358f011f1732a88b94fc1cfdc7f1aa1be7cfbf10f0, vout: 0 }, script_sig: Script(), sequence: Sequence(4294967295), witness: Witness { content: [71, 48, 68, 2, 32, 108, 66, 57, 210, 210, 43, 155, 105, 28, 107, 155, 160, 59, 89, 89, 157, 152, 68, 226, 4, 47, 39, 233, 146, 229, 117, 119, 114, 141, 7, 142, 217, 2, 32, 51, 56, 64, 47, 254, 158, 125, 197, 52, 140, 120, 72, 244, 47, 2, 191, 141, 89, 125, 151, 212, 132, 156, 7, 108, 57, 0, 117, 161, 141, 10, 189, 1, 51, 33, 3, 211, 83, 126, 107, 50, 155, 198, 193, 141, 179, 188, 88, 127, 60, 9, 104, 164, 15, 191, 226, 253, 225, 90, 59, 160, 195, 203, 28, 30, 199, 90, 167, 172, 99, 3, 160, 134, 1, 103, 0, 104, 3, 144, 95, 1, 160, 1, 0, 117], witness_elements: 2, last: 72, second_to_last: 0 } }, TxIn { previous_output: OutPoint { txid: 004e0d2c242446b3002845751701935fb2cc54fc83689a5e72f011830c103918, vout: 0 }, script_sig: Script(), sequence: Sequence(4294967295), witness: Witness { content: [0, 72, 48, 69, 2, 33, 0, 133, 204, 108, 3, 170, 52, 220, 227, 203, 160, 36, 5, 123, 135, 74, 31, 237, 205, 243, 92, 128, 169, 140, 130, 247, 108, 9, 39, 16, 236, 107, 122, 2, 32, 104, 253, 121, 131, 133, 6, 19, 91, 212, 255, 219, 116, 128, 119, 245, 44, 245, 127, 68, 214, 168, 67, 135, 161, 115, 220, 20, 243, 152, 201, 31, 102, 1, 112, 33, 2, 100, 199, 22, 204, 248, 131, 116, 4, 21, 36, 69, 204, 207, 88, 195, 30, 41, 232, 244, 45, 98, 101, 33, 132, 67, 91, 48, 62, 130, 229, 158, 188, 172, 99, 3, 160, 134, 1, 103, 0, 104, 124, 33, 2, 152, 227, 96, 239, 31, 6, 57, 193, 17, 4, 116, 94, 174, 42, 135, 81, 146, 74, 8, 18, 132, 232, 171, 56, 189, 127, 109, 75, 250, 78, 127, 196, 172, 99, 2, 160, 15, 147, 104, 3, 160, 109, 1, 160, 20, 202, 148, 77, 136, 70, 232, 204, 4, 44, 136, 203, 216, 171, 197, 22, 253, 152, 35, 103, 236, 117], witness_elements: 3, last: 74, second_to_last: 1 } }], output: [TxOut { value: 1039991290, script_pubkey: Script(OP_0 OP_PUSHBYTES_32 9f144d8bc2f55f59015b0c3365006d4d4ea2ab040264c423e97e23c235600569) }, TxOut { value: 0, script_pubkey: Script(OP_RETURN OP_PUSHBYTES_32 f49e56a581b18b80177210e289d1cb5d1ad72f93dafda0f0eeede51ae13cd57a) }] } }
+ INFO  orga::tendermint           > Executed block 58. txs=1
+ INFO  nomic::bitcoin::signer     > Submitted signatures
+ INFO  nomic::bitcoin::relayer    > Relayed checkpoint: 17817d0632efe2b72c700bcb99fdb3e315a643fe1b11c8c78cee035c522b2172
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  orga::tendermint           > Executed block 59. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::utils               > Polling for updated balance... // Dòng 490
+ INFO  orga::tendermint           > Executed block 60. txs=1
+ INFO  nomic::utils               > Scanning for bitcoin header 1135... // Dòng 506
+ INFO  nomic::bitcoin::relayer    > Relaying headers...
+	hash=7a97335f1ec61f80ce9fed5f4e88eb2990407f40c151b4985c19780b46f5f485
+	height=1132
+	batch_len=4
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::checkpoint > Reserve value: 1039976932 - Intermediate tx out value: 989989871 // Debug excess out
+ INFO  orga::tendermint           > Executed block 61. txs=1
+ INFO  nomic::utils               > Found bitcoin header 1135
+ INFO  nomic::utils               > Scanning for signed checkpoints...
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::relayer    > Relayed headers
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::relayer    > Sidechain header state is up-to-date:
+	hash=5af656a73a13b6284bc3a9b767cf485b4738673428bfbc66d63c9bb956cbd2e0
+	height=1135
+ INFO  orga::tendermint           > Executed block 62. txs=0
+ INFO  orga::tendermint           > Executed block 63. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  orga::tendermint           > Executed block 64. txs=0
+ INFO  nomic::bitcoin::signer     > Signing checkpoint (1 inputs)...
+ INFO  orga::tendermint           > Executed block 65. txs=1
+ INFO  nomic::bitcoin::signer     > Submitted signatures
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  orga::tendermint           > Executed block 66. txs=0
+ INFO  orga::tendermint           > Executed block 67. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  orga::tendermint           > Executed block 68. txs=0
+ INFO  orga::tendermint           > Executed block 69. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  orga::tendermint           > Executed block 70. txs=0
+ INFO  nomic::bitcoin::signer     > Signing checkpoint (1 inputs)...
+ INFO  orga::tendermint           > Executed block 71. txs=1
+ INFO  nomic::bitcoin::signer     > Submitted signatures
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  orga::tendermint           > Executed block 72. txs=0
+ INFO  orga::tendermint           > Executed block 73. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  orga::tendermint           > Executed block 74. txs=0
+ INFO  orga::tendermint           > Executed block 75. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 2f031d6e0c3cbcb9b670be4c1e783f73e0746bd22f713f1659966e996b3d5631
+ INFO  orga::tendermint           > Executed block 76. txs=0
+ INFO  nomic::bitcoin::signer     > Signing checkpoint (1 inputs)...
+ INFO  nomic::bitcoin::checkpoint > Checkpoint signing complete Adapter { inner: Transaction { version: 1, lock_time: PackedLockTime(0), input: [TxIn { previous_output: OutPoint { txid: 17817d0632efe2b72c700bcb99fdb3e315a643fe1b11c8c78cee035c522b2172, vout: 0 }, script_sig: Script(), sequence: Sequence(4294967295), witness: Witness { content: [0, 71, 48, 68, 2, 32, 67, 43, 34, 89, 234, 57, 10, 148, 139, 201, 225, 121, 6, 45, 12, 144, 72, 187, 99, 28, 37, 210, 1, 204, 134, 3, 20, 154, 99, 116, 152, 32, 2, 32, 9, 97, 140, 199, 2, 39, 190, 9, 201, 66, 149, 138, 124, 148, 58, 151, 154, 119, 162, 28, 3, 95, 79, 10, 96, 234, 36, 159, 174, 218, 206, 196, 1, 93, 33, 2, 100, 199, 22, 204, 248, 131, 116, 4, 21, 36, 69, 204, 207, 88, 195, 30, 41, 232, 244, 45, 98, 101, 33, 132, 67, 91, 48, 62, 130, 229, 158, 188, 172, 99, 3, 160, 134, 1, 103, 0, 104, 124, 33, 2, 152, 227, 96, 239, 31, 6, 57, 193, 17, 4, 116, 94, 174, 42, 135, 81, 146, 74, 8, 18, 132, 232, 171, 56, 189, 127, 109, 75, 250, 78, 127, 196, 172, 99, 2, 160, 15, 147, 104, 3, 160, 109, 1, 160, 1, 0, 117], witness_elements: 3, last: 73, second_to_last: 1 } }], output: [TxOut { value: 1039976932, script_pubkey: Script(OP_0 OP_PUSHBYTES_32 5e944a95def1a528d3e2dec72a43e48d1ae4c4a808a30234f0e7539d13c9559a) }, TxOut { value: 0, script_pubkey: Script(OP_RETURN OP_PUSHBYTES_32 9bd0785943aa5d34691bdf15e6928730633370cea39452113f1d437041463d73) }, TxOut { value: 6256, script_pubkey: Script(OP_0 OP_PUSHBYTES_20 84b7532ba575ef30979fb4b6c6e7d6bc30c94129) }] } }
+ INFO  nomic::bitcoin::checkpoint > Checkpoint signing complete Adapter { inner: Transaction { version: 1, lock_time: PackedLockTime(0), input: [TxIn { previous_output: OutPoint { txid: 17817d0632efe2b72c700bcb99fdb3e315a643fe1b11c8c78cee035c522b2172, vout: 0 }, script_sig: Script(), sequence: Sequence(4294967295), witness: Witness { content: [0, 71, 48, 68, 2, 32, 67, 43, 34, 89, 234, 57, 10, 148, 139, 201, 225, 121, 6, 45, 12, 144, 72, 187, 99, 28, 37, 210, 1, 204, 134, 3, 20, 154, 99, 116, 152, 32, 2, 32, 9, 97, 140, 199, 2, 39, 190, 9, 201, 66, 149, 138, 124, 148, 58, 151, 154, 119, 162, 28, 3, 95, 79, 10, 96, 234, 36, 159, 174, 218, 206, 196, 1, 93, 33, 2, 100, 199, 22, 204, 248, 131, 116, 4, 21, 36, 69, 204, 207, 88, 195, 30, 41, 232, 244, 45, 98, 101, 33, 132, 67, 91, 48, 62, 130, 229, 158, 188, 172, 99, 3, 160, 134, 1, 103, 0, 104, 124, 33, 2, 152, 227, 96, 239, 31, 6, 57, 193, 17, 4, 116, 94, 174, 42, 135, 81, 146, 74, 8, 18, 132, 232, 171, 56, 189, 127, 109, 75, 250, 78, 127, 196, 172, 99, 2, 160, 15, 147, 104, 3, 160, 109, 1, 160, 1, 0, 117], witness_elements: 3, last: 73, second_to_last: 1 } }], output: [TxOut { value: 1039976932, script_pubkey: Script(OP_0 OP_PUSHBYTES_32 5e944a95def1a528d3e2dec72a43e48d1ae4c4a808a30234f0e7539d13c9559a) }, TxOut { value: 0, script_pubkey: Script(OP_RETURN OP_PUSHBYTES_32 9bd0785943aa5d34691bdf15e6928730633370cea39452113f1d437041463d73) }, TxOut { value: 6256, script_pubkey: Script(OP_0 OP_PUSHBYTES_20 84b7532ba575ef30979fb4b6c6e7d6bc30c94129) }] } }
+ INFO  orga::tendermint           > Executed block 77. txs=1
+ INFO  nomic::bitcoin::signer     > Submitted signatures
+ INFO  nomic::bitcoin::relayer    > Relayed checkpoint: d050a92ad28d86a2add2f62309ad11384b6eeedb2670a057850dcb809f35d658
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 78. txs=0
+ INFO  orga::tendermint           > Executed block 79. txs=0
+ INFO  nomic::utils               > Polling for updated balance... // Dòng 522
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  bitcoin                    > Disbursal tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ 					// Dòng 538
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 80. txs=0
+ INFO  orga::tendermint           > Executed block 81. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 82. txs=0
+ INFO  orga::tendermint           > Executed block 83. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 84. txs=0
+ INFO  orga::tendermint           > Executed block 85. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 86. txs=0
+ INFO  orga::tendermint           > Executed block 87. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 88. txs=0
+ INFO  orga::tendermint           > Executed block 89. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 90. txs=0
+ INFO  orga::tendermint           > Executed block 91. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 92. txs=0
+ INFO  orga::tendermint           > Executed block 93. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 94. txs=0
+ INFO  orga::tendermint           > Executed block 95. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 96. txs=0
+ INFO  orga::tendermint           > Executed block 97. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 98. txs=0
+ INFO  orga::tendermint           > Executed block 99. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 100. txs=0
+ INFO  orga::tendermint           > Executed block 101. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 102. txs=0
+ INFO  orga::tendermint           > Executed block 103. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 104. txs=0
+ INFO  orga::tendermint           > Executed block 105. txs=0
+ INFO  orga::tendermint           > Executed block 106. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 107. txs=0
+ INFO  orga::tendermint           > Executed block 108. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 109. txs=0
+ INFO  orga::tendermint           > Executed block 110. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 111. txs=0
+ INFO  orga::tendermint           > Executed block 112. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 113. txs=0
+ INFO  orga::tendermint           > Executed block 114. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  orga::tendermint           > Executed block 115. txs=0
+ INFO  orga::tendermint           > Executed block 116. txs=0
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::relayer    > Relayed emergency disbursal transaction: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::relayer    > Relayed emergency disbursal transaction: 73c71c2285a566348b6b051366143957e90420fb3ff8dbf493cbec8f787e1c34
+ INFO  bitcoin                    > Transaction data: Transaction { version: 1, lock_time: PackedLockTime(1708078428), input: [TxIn { previous_output: OutPoint { txid: d050a92ad28d86a2add2f62309ad11384b6eeedb2670a057850dcb809f35d658, vout: 0 }, script_sig: Script(), sequence: Sequence(4294967295), witness: Witness { content: [0, 71, 48, 68, 2, 32, 2, 20, 40, 203, 46, 140, 218, 236, 86, 129, 84, 66, 10, 76, 109, 58, 49, 168, 224, 48, 240, 243, 146, 252, 87, 62, 93, 151, 128, 235, 43, 29, 2, 32, 61, 101, 171, 89, 158, 136, 88, 63, 0, 66, 65, 241, 92, 144, 151, 17, 147, 74, 124, 233, 130, 101, 15, 237, 170, 145, 114, 215, 114, 151, 162, 232, 1, 93, 33, 2, 178, 147, 210, 77, 22, 231, 129, 103, 118, 22, 59, 125, 134, 74, 209, 189, 52, 99, 226, 208, 239, 128, 199, 40, 141, 13, 207, 189, 214, 170, 10, 59, 172, 99, 3, 160, 134, 1, 103, 0, 104, 124, 33, 2, 122, 220, 67, 140, 205, 135, 182, 4, 229, 244, 20, 40, 242, 29, 203, 133, 126, 227, 193, 9, 225, 179, 41, 226, 200, 97, 69, 241, 218, 136, 129, 211, 172, 99, 2, 160, 15, 147, 104, 3, 160, 109, 1, 160, 1, 0, 117], witness_elements: 3, last: 73, second_to_last: 1 } }], output: [TxOut { value: 989989049, script_pubkey: Script(OP_0 OP_PUSHBYTES_32 5e944a95def1a528d3e2dec72a43e48d1ae4c4a808a30234f0e7539d13c9559a) }, TxOut { value: 49986239, script_pubkey: Script(OP_0 OP_PUSHBYTES_32 5e944a95def1a528d3e2dec72a43e48d1ae4c4a808a30234f0e7539d13c9559a) }] }
+ INFO  bitcoin                    > Disbursal tx: 73c71c2285a566348b6b051366143957e90420fb3ff8dbf493cbec8f787e1c34
+ INFO  bitcoin                    > Transaction data: Transaction { version: 1, lock_time: PackedLockTime(1708078428), input: [TxIn { previous_output: OutPoint { txid: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47, vout: 0 }, script_sig: Script(), sequence: Sequence(4294967295), witness: Witness { content: [0, 71, 48, 68, 2, 32, 12, 204, 182, 21, 231, 134, 186, 12, 54, 238, 24, 79, 220, 239, 246, 203, 91, 179, 147, 101, 17, 63, 206, 35, 243, 22, 102, 211, 253, 4, 72, 80, 2, 32, 96, 246, 97, 131, 234, 99, 158, 187, 97, 84, 1, 182, 115, 78, 142, 44, 137, 48, 111, 146, 209, 240, 109, 116, 164, 243, 217, 27, 28, 156, 200, 131, 1, 93, 33, 2, 178, 147, 210, 77, 22, 231, 129, 103, 118, 22, 59, 125, 134, 74, 209, 189, 52, 99, 226, 208, 239, 128, 199, 40, 141, 13, 207, 189, 214, 170, 10, 59, 172, 99, 3, 160, 134, 1, 103, 0, 104, 124, 33, 2, 122, 220, 67, 140, 205, 135, 182, 4, 229, 244, 20, 40, 242, 29, 203, 133, 126, 227, 193, 9, 225, 179, 41, 226, 200, 97, 69, 241, 218, 136, 129, 211, 172, 99, 2, 160, 15, 147, 104, 3, 160, 109, 1, 160, 1, 0, 117], witness_elements: 3, last: 73, second_to_last: 1 } }], output: [TxOut { value: 989988029, script_pubkey: Script(OP_DUP OP_HASH160 OP_PUSHBYTES_20 d979457216c6c904feb642602116df4458d6584b OP_EQUALVERIFY OP_CHECKSIG) }] }
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  bitcoin                    > Get signatory script tx: [Adapter { inner: Transaction { version: 1, lock_time: PackedLockTime(1708078428), input: [TxIn { previous_output: OutPoint { txid: d050a92ad28d86a2add2f62309ad11384b6eeedb2670a057850dcb809f35d658, vout: 0 }, script_sig: Script(), sequence: Sequence(4294967295), witness: Witness { content: [0, 71, 48, 68, 2, 32, 2, 20, 40, 203, 46, 140, 218, 236, 86, 129, 84, 66, 10, 76, 109, 58, 49, 168, 224, 48, 240, 243, 146, 252, 87, 62, 93, 151, 128, 235, 43, 29, 2, 32, 61, 101, 171, 89, 158, 136, 88, 63, 0, 66, 65, 241, 92, 144, 151, 17, 147, 74, 124, 233, 130, 101, 15, 237, 170, 145, 114, 215, 114, 151, 162, 232, 1, 93, 33, 2, 178, 147, 210, 77, 22, 231, 129, 103, 118, 22, 59, 125, 134, 74, 209, 189, 52, 99, 226, 208, 239, 128, 199, 40, 141, 13, 207, 189, 214, 170, 10, 59, 172, 99, 3, 160, 134, 1, 103, 0, 104, 124, 33, 2, 122, 220, 67, 140, 205, 135, 182, 4, 229, 244, 20, 40, 242, 29, 203, 133, 126, 227, 193, 9, 225, 179, 41, 226, 200, 97, 69, 241, 218, 136, 129, 211, 172, 99, 2, 160, 15, 147, 104, 3, 160, 109, 1, 160, 1, 0, 117], witness_elements: 3, last: 73, second_to_last: 1 } }], output: [TxOut { value: 989989049, script_pubkey: Script(OP_0 OP_PUSHBYTES_32 5e944a95def1a528d3e2dec72a43e48d1ae4c4a808a30234f0e7539d13c9559a) }, TxOut { value: 49986239, script_pubkey: Script(OP_0 OP_PUSHBYTES_32 5e944a95def1a528d3e2dec72a43e48d1ae4c4a808a30234f0e7539d13c9559a) }] } }, Adapter { inner: Transaction { version: 1, lock_time: PackedLockTime(1708078428), input: [TxIn { previous_output: OutPoint { txid: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47, vout: 0 }, script_sig: Script(), sequence: Sequence(4294967295), witness: Witness { content: [0, 71, 48, 68, 2, 32, 12, 204, 182, 21, 231, 134, 186, 12, 54, 238, 24, 79, 220, 239, 246, 203, 91, 179, 147, 101, 17, 63, 206, 35, 243, 22, 102, 211, 253, 4, 72, 80, 2, 32, 96, 246, 97, 131, 234, 99, 158, 187, 97, 84, 1, 182, 115, 78, 142, 44, 137, 48, 111, 146, 209, 240, 109, 116, 164, 243, 217, 27, 28, 156, 200, 131, 1, 93, 33, 2, 178, 147, 210, 77, 22, 231, 129, 103, 118, 22, 59, 125, 134, 74, 209, 189, 52, 99, 226, 208, 239, 128, 199, 40, 141, 13, 207, 189, 214, 170, 10, 59, 172, 99, 3, 160, 134, 1, 103, 0, 104, 124, 33, 2, 122, 220, 67, 140, 205, 135, 182, 4, 229, 244, 20, 40, 242, 29, 203, 133, 126, 227, 193, 9, 225, 179, 41, 226, 200, 97, 69, 241, 218, 136, 129, 211, 172, 99, 2, 160, 15, 147, 104, 3, 160, 109, 1, 160, 1, 0, 117], witness_elements: 3, last: 73, second_to_last: 1 } }], output: [TxOut { value: 989988029, script_pubkey: Script(OP_DUP OP_HASH160 OP_PUSHBYTES_20 d979457216c6c904feb642602116df4458d6584b OP_EQUALVERIFY OP_CHECKSIG) }] } }]
+ INFO  nomic::bitcoin::relayer    > Relaying headers...
+	hash=2b599da93cdf2e1b1c1601cab2740a7f58a7fa950f84025dfe46a8c2d8c346ca
+	height=1136
+	batch_len=1
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+ INFO  nomic::bitcoin::checkpoint > Intermediate Tx: 8c146b200c45e7a6f62ddb75d6530c45ef3c9b91f7c5e1f903a53f0f29a56e47
+test bitcoin_test ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 5 filtered out; finished in 138.22s
+
+     Running `/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/header_queue-638625c8001205f6 bitcoin --ignored`
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.00s
+
+     Running `/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/node-50e4f17c66eaf5d1 bitcoin --ignored`
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+
+     Running `/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/node_spawn-e144f4297d8a1e8f bitcoin --ignored`
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out; finished in 0.00s
+
+     Running `/media/lenovo/DATABOX/Developer/nomic/target/debug/deps/relayer-82e8d098c19a7448 bitcoin --ignored`
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

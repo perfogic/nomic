@@ -46,6 +46,11 @@ use orga::Error;
 use serde::{Deserialize, Serialize};
 use std::convert::TryInto;
 use std::fmt::Debug;
+use std::env;
+use crate::constants::{
+    INITIAL_SUPPLY_ORAIBTC,
+    INITIAL_SUPPLY_USATS_FOR_RELAYER,
+};
 
 mod migrations;
 
@@ -64,6 +69,8 @@ const DEV_ADDRESS: &str = "nomic14z79y3yrghqx493mwgcj0qd2udy6lm26lmduah";
 const STRATEGIC_RESERVE_ADDRESS: &str = "nomic1d5n325zrf4elfu0heqd59gna5j6xyunhev23cj";
 #[cfg(feature = "full")]
 const VALIDATOR_BOOTSTRAP_ADDRESS: &str = "nomic1fd9mxxt84lw3jdcsmjh6jy8m6luafhqd8dcqeq";
+#[cfg(feature = "devnet")]
+const DEFAULT_FUNDED_AMOUNT: u64 = 1_000_000_000_000_000_000;
 
 const IBC_FEE_USATS: u64 = 1_000_000;
 const DECLARE_FEE_USATS: u64 = 100_000_000;
@@ -355,6 +362,41 @@ impl InnerApp {
     pub fn app_noop_query(&self) -> Result<()> {
         Ok(())
     }
+
+    #[call]
+    pub fn mint_initial_supply(&mut self) -> Result<String> {
+        {
+            // mint uoraibtc and nbtc for a funded address given in the env variable
+            if let Ok(funded_address) = env::var("FUNDED_ADDRESS") {
+                let funded_oraibtc_amount = env::var("FUNDED_ORAIBTC_AMOUNT").unwrap_or_default();
+                let funded_usat_amount = env::var("FUNDED_USAT_AMOUNT").unwrap_or_default();
+                let unom_coin: Coin<Nom> = Amount::new(
+                    funded_oraibtc_amount
+                        .parse::<u64>()
+                        .unwrap_or(INITIAL_SUPPLY_ORAIBTC),
+                )
+                .into();
+                // mint new uoraibtc coin for funded address
+                self.accounts
+                    .deposit(funded_address.parse().unwrap(), unom_coin)?;
+    
+                let nbtc_coin: Coin<Nbtc> = Amount::new(
+                    funded_usat_amount
+                        .parse::<u64>()
+                        .unwrap_or(INITIAL_SUPPLY_USATS_FOR_RELAYER),
+                )
+                .into();
+                // add new nbtc coin to the funded address
+                self.credit_transfer(Dest::Address(funded_address.parse().unwrap()), nbtc_coin)?;
+                self.accounts
+                    .add_transfer_exception(funded_address.parse().unwrap())?;
+                return Ok(funded_address);
+            }
+            Ok("".to_string())
+        }
+        // #[cfg(not(feature = "faucet-test"))]
+        // Err(orga::Error::Unknown)
+    }
 }
 
 #[derive(Debug, Clone, Default)]
@@ -424,6 +466,7 @@ mod abci {
                 .current_version
                 .insert((), vec![Self::CONSENSUS_VERSION].try_into().unwrap())?;
 
+            self.mint_initial_supply()?;
             Ok(())
         }
     }

@@ -35,6 +35,7 @@ use orga::client::{
     wallet::{DerivedKey, Unsigned},
     AppClient,
 };
+use orga::Error as OrgaError;
 use orga::coins::{Address, Amount};
 use orga::encoding::Encode;
 use orga::macros::build_call;
@@ -180,6 +181,7 @@ async fn get_signatory_script() -> Result<Script> {
     Ok(app_client()
         .query(|app: InnerApp| {
             let tx = app.bitcoin.checkpoints.emergency_disbursal_txs()?;
+            info!("Get signatory script tx: {:?}", tx);
             Ok(tx[0].output[1].script_pubkey.clone())
         })
         .await?)
@@ -208,10 +210,11 @@ async fn bitcoin_test() {
     let rpc_url = bitcoind.rpc_url();
     let cookie_file = bitcoind.params.cookie_file.clone();
     let btc_client = test_bitcoin_client(rpc_url.clone(), cookie_file.clone()).await;
-
+    
+    // Return height and block header of current regtest bitcoin
     let block_data = populate_bitcoin_block(&btc_client).await;
 
-    let home = tempdir().unwrap();
+    let home = tempdir().unwrap(); // create temporary directory
     let path = home.into_path();
 
     let node_path = path.clone();
@@ -222,7 +225,8 @@ async fn bitcoin_test() {
         signer_path.join("signer/xpriv"),
         xpriv.to_string().as_bytes(),
     )
-    .unwrap();
+    .unwrap(); // Init xpriv for nomic signer
+
     let xpub = ExtendedPubKey::from_priv(&secp256k1::Secp256k1::new(), &xpriv);
     let header_relayer_path = path.clone();
 
@@ -240,7 +244,11 @@ async fn bitcoin_test() {
         max_length: 59,
         ..Default::default()
     };
+
     let funded_accounts = setup_test_app(&path, 4, Some(headers_config), None, None);
+
+    
+
 
     let node = Node::<nomic::app::App>::new(node_path, Some("nomic-e2e"), Default::default());
     let _node_child = node.await.run().await.unwrap();
@@ -251,6 +259,8 @@ async fn bitcoin_test() {
         test_bitcoin_client(rpc_url.clone(), cookie_file.clone()).await,
         rpc_addr.clone(),
     );
+
+    // Relay header up to latest block on bitcoin network
     let headers = relayer.start_header_relay();
 
     let relayer = Relayer::new(
@@ -271,6 +281,8 @@ async fn bitcoin_test() {
     );
     let disbursal = relayer.start_emergency_disbursal_transaction_relay();
 
+    // client_provider: come from nomic signer
+    // Set up two signer: real signer and slashable signer
     let signer = async {
         tokio::time::sleep(Duration::from_secs(10)).await;
         setup_test_signer(&signer_path, client_provider)
@@ -314,6 +326,7 @@ async fn bitcoin_test() {
     };
 
     let test = async {
+        // declare main validator
         let val_priv_key = load_privkey().unwrap();
         let nomic_wallet = DerivedKey::from_secret_key(val_priv_key);
         let consensus_key = load_consensus_key(&path)?;
@@ -328,6 +341,7 @@ async fn bitcoin_test() {
             )
             .await?;
 
+        // declare slashable validator
         let privkey_bytes = funded_accounts[2].privkey.secret_bytes();
         let privkey = orga::secp256k1::SecretKey::from_slice(&privkey_bytes).unwrap();
         declare_validator([0; 32], funded_accounts[2].wallet.clone(), 4_000)
@@ -352,6 +366,7 @@ async fn bitcoin_test() {
             labels.push(format!("funded-account-{}", i));
         }
 
+        // Init wallets for bitcoin regtest rpc client
         let mut import_multi_reqest = vec![];
         for (i, account) in funded_accounts.iter().enumerate() {
             import_multi_reqest.push(ImportMultiRequest {
@@ -377,6 +392,24 @@ async fn bitcoin_test() {
         set_recovery_address(funded_accounts[0].clone())
             .await
             .unwrap();
+
+        for funded_account in funded_accounts.iter() {
+            app_client()
+            .query(|app| {
+                Ok(match app.bitcoin.recovery_scripts.get(funded_account.address)? {
+                    Some(script) => {
+                        let address = bitcoin::Address::from_script(&script, bitcoin::Network::Regtest)
+                        .map_err(|e| OrgaError::App(format!("{:?}", e)))?
+                        .to_string();
+                        info!("[DEBUG] Nomic Address: {:?} Recovery Address: {:?}", funded_account.address, address);
+                        address
+                    },
+                    None => "".to_string(),
+                })
+            })
+            .await?;
+        }
+
 
         btc_client
             .generate_to_address(120, &async_wallet_address)
@@ -410,21 +443,21 @@ async fn bitcoin_test() {
             .unwrap();
 
         poll_for_bitcoin_header(1124).await.unwrap();
-        poll_for_signing_checkpoint().await;
+        poll_for_signing_checkpoint().await; // This case checkpoint created from deposit was in signing state
 
         let expected_balance = 0;
         let balance = poll_for_updated_balance(funded_accounts[0].address, expected_balance).await;
         assert_eq!(balance, expected_balance);
 
         let confirmed_index = app_client()
-            .query(|app| Ok(app.bitcoin.checkpoints.confirmed_index))
+            .query(|app: InnerApp| Ok(app.bitcoin.checkpoints.confirmed_index))
             .await
             .unwrap();
         assert_eq!(confirmed_index, None);
 
         poll_for_completed_checkpoint(1).await;
 
-        tx.send(Some(())).await.unwrap();
+        tx.send(Some(())).await.unwrap(); // Use to shutdown slashable signer
 
         let expected_balance = 989996871600000;
         let balance = poll_for_updated_balance(funded_accounts[0].address, expected_balance).await;
@@ -502,6 +535,7 @@ async fn bitcoin_test() {
             .await?;
 
         for txid in disbursal_txs.iter() {
+            log::info!("Disbursal tx: {:?}", txid);
             let async_txid =
                 bitcoincore_rpc_async::bitcoin::hash_types::Txid::from_str(&txid.to_string())
                     .unwrap();
@@ -511,6 +545,15 @@ async fn bitcoin_test() {
                 .is_err()
             {
                 tokio::time::sleep(Duration::from_secs(2)).await;
+            }
+
+            match btc_client.get_raw_transaction(&async_txid, None).await {
+                Ok(data) => {
+                    info!("Transaction data: {:?}", data);
+                },
+                Err(e) => {
+                    info!("Error");
+                }
             }
         }
 

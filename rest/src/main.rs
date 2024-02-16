@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate rocket;
 
+use bitcoin::Address as BitcoinAddress;
 use chrono::{TimeZone, Utc};
 use nomic::{
     app::{InnerApp, Nom},
@@ -933,6 +934,39 @@ async fn staking_params() -> Value {
     })
 }
 
+#[get("/bitcoin/recovery_address/<address>?<network>")]
+async fn get_bitcoin_recovery_address(
+    address: String,
+    network: String,
+) -> Result<Value, BadRequest<String>> {
+    let netw = match network.as_str() {
+        "bitcoin" => bitcoin::Network::Bitcoin,
+        "regtest" => bitcoin::Network::Regtest,
+        "testnet" => bitcoin::Network::Testnet,
+        "signet" => bitcoin::Network::Signet,
+        _ => bitcoin::Network::Bitcoin,
+    };
+    let recovery_address: String = app_client()
+        .query(|app: InnerApp| {
+            Ok(
+                match app
+                    .bitcoin
+                    .recovery_scripts
+                    .get(Address::from_str(&address).unwrap())?
+                {
+                    Some(script) => BitcoinAddress::from_script(&script, netw)
+                        .unwrap()
+                        .to_string(),
+                    None => "".to_string(),
+                },
+            )
+        })
+        .await
+        .map_err(|e| BadRequest(Some(format!("{:?}", e))))?;
+    Ok(json!(recovery_address.to_string()))
+}
+
+
 #[get("/cosmos/slashing/v1beta1/params")]
 async fn slashing_params() -> Value {
     let (
@@ -1364,6 +1398,7 @@ fn rocket() -> _ {
             ibc_connections,
             ibc_connection_client_state,
             ibc_connection_channels,
+            get_bitcoin_recovery_address,
         ],
     )
 }

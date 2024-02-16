@@ -9,6 +9,7 @@ use crate::error::Error;
 use crate::error::Result;
 use crate::orga::encoding::Encode;
 use crate::utils::time_now;
+use crate::app::InnerApp;
 use bitcoin::consensus::{Decodable, Encodable};
 use bitcoin::Txid;
 use bitcoin::{hashes::Hash, Block, BlockHash, Transaction};
@@ -451,7 +452,7 @@ impl Relayer {
         let mut relayed = HashSet::new();
         loop {
             let disbursal_txs = app_client(&self.app_client_addr)
-                .query(|app| Ok(app.bitcoin.checkpoints.emergency_disbursal_txs()?))
+                .query(|app: InnerApp| Ok(app.bitcoin.checkpoints.emergency_disbursal_txs()?))
                 .await?;
 
             for tx in disbursal_txs.iter() {
@@ -510,7 +511,7 @@ impl Relayer {
 
     async fn relay_checkpoints(&mut self) -> Result<()> {
         let last_checkpoint = app_client(&self.app_client_addr)
-            .query(|app| Ok(app.bitcoin.checkpoints.last_completed_tx()?))
+            .query(|app: InnerApp| Ok(app.bitcoin.checkpoints.last_completed_tx()?))
             .await?;
         info!("Last checkpoint tx: {}", last_checkpoint.txid());
 
@@ -518,7 +519,7 @@ impl Relayer {
 
         loop {
             let txs = app_client(&self.app_client_addr)
-                .query(|app| Ok(app.bitcoin.checkpoints.completed_txs(1_000)?))
+                .query(|app: InnerApp| Ok(app.bitcoin.checkpoints.completed_txs(1_000)?))
                 .await?;
             for tx in txs {
                 if relayed.contains(&tx.txid()) {

@@ -43,6 +43,7 @@ use orga::{client::wallet::DerivedKey, macros::build_call};
 use rand::Rng;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
+use std::fmt::Display;
 use std::fs;
 #[cfg(feature = "full")]
 use std::path::Path;
@@ -318,7 +319,7 @@ pub async fn poll_for_active_sigset() {
     info!("Polling for active sigset...");
     loop {
         match app_client(DEFAULT_RPC)
-            .query(|app| Ok(app.bitcoin.checkpoints.active_sigset()?))
+            .query(|app: InnerApp| Ok(app.bitcoin.checkpoints.active_sigset()?))
             .await
         {
             Ok(_) => break,
@@ -358,7 +359,7 @@ pub async fn poll_for_signing_checkpoint() {
 pub async fn poll_for_completed_checkpoint(num_checkpoints: u32) {
     info!("Scanning for signed checkpoints...");
     let mut checkpoint_len = app_client(DEFAULT_RPC)
-        .query(|app| Ok(app.bitcoin.checkpoints.completed(1_000)?.len()))
+        .query(|app: InnerApp| Ok(app.bitcoin.checkpoints.completed(1_000)?.len()))
         .await
         .unwrap();
 
