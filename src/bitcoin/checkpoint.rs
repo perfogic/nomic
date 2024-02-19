@@ -469,7 +469,7 @@ pub struct Checkpoint {
     /// atomically, in order. The first batch contains the "final emergency
     /// disbursal transactions", the second batch contains the "intermediate
     /// emergency disbursal transaction", and the third batch contains the
-    /// "checkpoint transaction".
+    /// "checkpoint transaction".   
     pub batches: Deque<Batch>,
 
     /// Pending transfers of nBTC to be processed once the checkpoint is fully
@@ -800,7 +800,6 @@ impl Checkpoint {
 
         let intermediate_tx_batch = self.batches.get(BatchType::IntermediateTx as u64)?.unwrap();
         if let Some(intermediate_tx) = intermediate_tx_batch.get(0)? {
-            log::info!("Intermediate Tx: {:?}", intermediate_tx.to_bitcoin_tx()?.txid());
             txs.push(Adapter::new(intermediate_tx.to_bitcoin_tx()?));
         } else {
             return Ok(txs);
@@ -817,6 +816,10 @@ impl Checkpoint {
                     // Handle error, e.g., continue to next transaction, record the error, etc.
                 },
             }
+        }
+
+        for tx in txs.iter() {
+            log::info!("Disbursal tx is seted is {:?}", tx.txid());
         }
 
         Ok(txs)
@@ -1084,7 +1087,7 @@ impl Config {
     fn regtest() -> Self {
         Self {
             min_checkpoint_interval: 15,
-            emergency_disbursal_lock_time_interval: 60,
+            emergency_disbursal_lock_time_interval: 120,
             emergency_disbursal_max_tx_size: 11,
             ..Config::bitcoin()
         }
@@ -1104,7 +1107,7 @@ impl Config {
             sigset_threshold: SIGSET_THRESHOLD,
             emergency_disbursal_min_tx_amt: 1000,
             #[cfg(feature = "testnet")]
-            emergency_disbursal_lock_time_interval: 60 * 60, // one week
+            emergency_disbursal_lock_time_interval: 60 * 40, // one week
             #[cfg(not(feature = "testnet"))]
             emergency_disbursal_lock_time_interval: 60 * 60 * 24 * 7 * 2, // two weeks
             emergency_disbursal_max_tx_size: 50_000,
@@ -1599,6 +1602,7 @@ impl<'a> BuildingCheckpointMut<'a> {
         let mut checkpoint_tx = checkpoint_batch.get_mut(0)?.unwrap();
         for out in outs.iter().rev() {
             checkpoint_tx.output.push_front(Adapter::new(out.clone()))?;
+            // timestamp output first, then reserve_script
         }
 
         // Remove excess inputs and outputs from the checkpoint tx, to be pushed

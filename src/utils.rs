@@ -43,7 +43,6 @@ use orga::{client::wallet::DerivedKey, macros::build_call};
 use rand::Rng;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use std::fmt::Display;
 use std::fs;
 #[cfg(feature = "full")]
 use std::path::Path;

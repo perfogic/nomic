@@ -84,7 +84,6 @@ where
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct SignatorySet {
     /// The time at which this signatory set was created, in seconds.
-    ///
     /// This is used to enforce that deposits can not be relayed against old
     /// signatory sets (see [`MAX_DEPOSIT_AGE`]).
     pub create_time: u64,
@@ -470,6 +469,7 @@ impl SignatorySet {
     /// script, which is what is used as the script pubkey in deposit outputs
     /// and reserve outputs.
     pub fn output_script(&self, dest: &[u8], threshold: (u64, u64)) -> Result<Script> {
+        // Pay to witness script hash
         Ok(self.redeem_script(dest, threshold)?.to_v0_p2wsh())
     }
 

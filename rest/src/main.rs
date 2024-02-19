@@ -5,7 +5,7 @@ use bitcoin::Address as BitcoinAddress;
 use chrono::{TimeZone, Utc};
 use nomic::{
     app::{InnerApp, Nom},
-    bitcoin::Nbtc,
+    bitcoin::{checkpoint::CheckpointQueue, Nbtc, Config as CheckpointConfig},
     orga::{
         client::{wallet::Unsigned, AppClient},
         coins::{Address, Amount, Decimal, DelegationInfo, Symbol, ValidatorQueryInfo},
@@ -966,7 +966,6 @@ async fn get_bitcoin_recovery_address(
     Ok(json!(recovery_address.to_string()))
 }
 
-
 #[get("/cosmos/slashing/v1beta1/params")]
 async fn slashing_params() -> Value {
     let (
@@ -1067,7 +1066,9 @@ async fn block(height: u32) -> Value {
 }
 
 fn parse_validator_set(res: tendermint_rpc::endpoint::validators::Response) -> Value {
-    let validators: Vec<_> = res.validators.iter()
+    let validators: Vec<_> = res
+        .validators
+        .iter()
         .map(|validator| -> Value {
             json!({
                 "address": validator.address,
@@ -1095,10 +1096,7 @@ fn parse_validator_set(res: tendermint_rpc::endpoint::validators::Response) -> V
 async fn latest_validator_set() -> Value {
     let client = tm::HttpClient::new(app_host()).unwrap();
 
-    let block = client
-        .latest_block()
-        .await
-        .unwrap();
+    let block = client.latest_block().await.unwrap();
 
     let res = client
         .validators(block.block.header.height, tendermint_rpc::Paging::All)
@@ -1137,6 +1135,65 @@ async fn community_pool() -> Value {
     })
 }
 
+#[get("/bitcoin/value_locked")]
+async fn bitcoin_value_locked() -> Value {
+    let value_locked = app_client()
+    .query(|app: InnerApp| Ok(app.bitcoin.value_locked()?))
+    .await
+    .unwrap();
+
+    json!({
+        "value": value_locked
+    })
+}
+
+#[get("/bitcoin/checkpoint/config")]
+async fn bitcoin_checkpoint_config() -> Result<Value, BadRequest<String>> {
+    let config = app_client()
+        .query(|app: InnerApp| Ok(app.bitcoin.checkpoints.config()))
+        .await
+        .map_err(|e| BadRequest(Some(format!("{:?}", e))))?;
+
+    Ok(json!(config))
+}
+
+#[get("/bitcoin/checkpoint/<checkpoint_index>")]
+async fn bitcoin_latest_checkpoint(checkpoint_index: u64) -> Result<Value, BadRequest<String>> {
+    let checkpoint_queue: CheckpointQueue = app_client()
+        .query(|app: InnerApp| Ok(app.bitcoin.checkpoints))
+        .await
+        .map_err(|e| BadRequest(Some(format!("{:?}", e))))?;
+
+    let checkpoint_len = checkpoint_queue.queue.len();
+    if checkpoint_len == 0 {
+        return Ok(json!({}));
+    }
+    println!("{:?}", checkpoint_queue.queue);
+    if let Some(current_checkpoint) = checkpoint_queue.queue.front().map_err(|err| BadRequest(Some(format!("{:?}", err))))? {
+        return Ok(json!({
+            "page": {
+                "current": checkpoint_index,
+                "total": checkpoint_len,
+            },
+            "data": {
+                "current_fee_rate": current_checkpoint.fee_rate,
+                "status": current_checkpoint.status,
+                "fees_collected": current_checkpoint.fees_collected,
+                "signed_at_btc_height": current_checkpoint.signed_at_btc_height,
+                "deposits_enabled": current_checkpoint.deposits_enabled,
+                "fee_rate": current_checkpoint.fee_rate,
+            }
+        }));
+    }
+
+    Ok(json!({
+        "page": {
+            "current": checkpoint_index,
+            "total": checkpoint_len,
+        },
+    }))
+}
+
 #[get("/cosmos/gov/v1beta1/proposals")]
 fn proposals() -> Value {
     json!({
@@ -1152,7 +1209,7 @@ fn proposals() -> Value {
 #[allow(deprecated)]
 async fn ibc_connection_client_state(connection: &str) -> Value {
     let connection = app_client()
-        .query(|app| {
+        .query(|app: InnerApp| {
             app.ibc.ctx.query_connection(EofTerminatedString(
                 IbcConnectionId::from_str(connection).unwrap(),
             ))
@@ -1163,7 +1220,7 @@ async fn ibc_connection_client_state(connection: &str) -> Value {
         .inner;
 
     let states: Vec<IdentifiedClientState> = app_client()
-        .query(|app| app.ibc.ctx.query_client_states())
+        .query(|app: InnerApp| app.ibc.ctx.query_client_states())
         .await
         .unwrap();
 
@@ -1399,6 +1456,9 @@ fn rocket() -> _ {
             ibc_connection_client_state,
             ibc_connection_channels,
             get_bitcoin_recovery_address,
+            bitcoin_latest_checkpoint,
+            bitcoin_checkpoint_config,
+            bitcoin_value_locked
         ],
     )
 }

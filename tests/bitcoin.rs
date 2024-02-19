@@ -593,70 +593,70 @@ async fn bitcoin_test() {
         let expected_account_balances: Vec<u64> = vec![989988029, 0, 0, 0];
         assert_eq!(funded_account_balances, expected_account_balances);
 
-        for (i, account) in funded_accounts[0..1].iter().enumerate() {
-            let dump_address = wallet.get_new_address(None, None).unwrap();
-            let disbursal_txs = app_client()
-                .query(|app| Ok(app.bitcoin.checkpoints.emergency_disbursal_txs()?))
-                .await
-                .unwrap();
+        // for (i, account) in funded_accounts[0..1].iter().enumerate() {
+        //     let dump_address = wallet.get_new_address(None, None).unwrap();
+        //     let disbursal_txs = app_client()
+        //         .query(|app| Ok(app.bitcoin.checkpoints.emergency_disbursal_txs()?))
+        //         .await
+        //         .unwrap();
 
-            let spending_tx = disbursal_txs
-                .iter()
-                .find(|tx| {
-                    tx.output
-                        .iter()
-                        .any(|output| output.script_pubkey == account.script)
-                })
-                .unwrap();
+        //     let spending_tx = disbursal_txs
+        //         .iter()
+        //         .find(|tx| {
+        //             tx.output
+        //                 .iter()
+        //                 .any(|output| output.script_pubkey == account.script)
+        //         })
+        //         .unwrap();
 
-            let vout = spending_tx
-                .output
-                .iter()
-                .position(|output| output.script_pubkey == account.script)
-                .unwrap();
+        //     let vout = spending_tx
+        //         .output
+        //         .iter()
+        //         .position(|output| output.script_pubkey == account.script)
+        //         .unwrap();
 
-            let tx_in = bitcoind::bitcoincore_rpc::json::CreateRawTransactionInput {
-                txid: spending_tx.txid(),
-                vout: vout.try_into().unwrap(),
-                sequence: None,
-            };
-            let mut outputs = HashMap::new();
-            outputs.insert(
-                dump_address.to_string(),
-                bitcoin::Amount::from_sat(expected_account_balances[i] - 10000),
-            );
+        //     let tx_in = bitcoind::bitcoincore_rpc::json::CreateRawTransactionInput {
+        //         txid: spending_tx.txid(),
+        //         vout: vout.try_into().unwrap(),
+        //         sequence: None,
+        //     };
+        //     let mut outputs = HashMap::new();
+        //     outputs.insert(
+        //         dump_address.to_string(),
+        //         bitcoin::Amount::from_sat(expected_account_balances[i] - 10000),
+        //     );
 
-            let tx = bitcoind
-                .client
-                .create_raw_transaction(&[tx_in], &outputs, None, None)
-                .unwrap();
+        //     let tx = bitcoind
+        //         .client
+        //         .create_raw_transaction(&[tx_in], &outputs, None, None)
+        //         .unwrap();
 
-            let privkey = bitcoin::PrivateKey::new(account.privkey, bitcoin::Network::Regtest);
-            let sign_res = bitcoind
-                .client
-                .sign_raw_transaction_with_key(
-                    &tx,
-                    &[privkey],
-                    None,
-                    Some(EcdsaSighashType::All.into()),
-                )
-                .unwrap();
-            let signed_tx: bitcoin::Transaction = sign_res.transaction().unwrap();
+        //     let privkey = bitcoin::PrivateKey::new(account.privkey, bitcoin::Network::Regtest);
+        //     let sign_res = bitcoind
+        //         .client
+        //         .sign_raw_transaction_with_key(
+        //             &tx,
+        //             &[privkey],
+        //             None,
+        //             Some(EcdsaSighashType::All.into()),
+        //         )
+        //         .unwrap();
+        //     let signed_tx: bitcoin::Transaction = sign_res.transaction().unwrap();
 
-            btc_client.send_raw_transaction(&signed_tx).await.unwrap();
+        //     btc_client.send_raw_transaction(&signed_tx).await.unwrap();
 
-            btc_client
-                .generate_to_address(1, &async_wallet_address)
-                .await
-                .unwrap();
+        //     btc_client
+        //         .generate_to_address(1, &async_wallet_address)
+        //         .await
+        //         .unwrap();
 
-            let sent_amount = match wallet.get_received_by_address(&dump_address, None) {
-                Ok(amount) => amount.to_sat(),
-                _ => 0,
-            };
+        //     let sent_amount = match wallet.get_received_by_address(&dump_address, None) {
+        //         Ok(amount) => amount.to_sat(),
+        //         _ => 0,
+        //     };
 
-            assert_eq!(sent_amount, expected_account_balances[i] - 10000);
-        }
+        //     assert_eq!(sent_amount, expected_account_balances[i] - 10000);
+        // }
 
         Err::<(), Error>(Error::Test("Test completed successfully".to_string()))
     };

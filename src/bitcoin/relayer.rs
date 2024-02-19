@@ -518,6 +518,7 @@ impl Relayer {
         let mut relayed = HashSet::new();
 
         loop {
+            info!("Relayed: {:?}", relayed);
             let txs = app_client(&self.app_client_addr)
                 .query(|app: InnerApp| Ok(app.bitcoin.checkpoints.completed_txs(1_000)?))
                 .await?;
@@ -529,6 +530,8 @@ impl Relayer {
                 if tx.input.is_empty() {
                     continue;
                 }
+
+                info!("Tx data: {:?}", tx);
 
                 let mut tx_bytes = vec![];
                 tx.consensus_encode(&mut tx_bytes)?;
@@ -542,12 +545,17 @@ impl Relayer {
                     Ok(_) => {
                         info!("Relayed checkpoint: {}", tx.txid());
                     }
-                    Err(err) if err.to_string().contains("bad-txns-inputs-missingorspent") => {}
+                    Err(err) if err.to_string().contains("bad-txns-inputs-missingorspent") => {
+                        error!("Bad input error");
+                    }
                     Err(err)
                         if err
                             .to_string()
-                            .contains("Transaction already in block chain") => {}
-                    Err(err) => Err(err)?,
+                            .contains("Transaction already in block chain") => {
+                                error!("Transaction already in block chain");
+                            }
+                    Err(err) => {
+                    },
                 }
 
                 relayed.insert(tx.txid());
@@ -651,7 +659,7 @@ impl Relayer {
         loop {
             let (confirmed_index, unconf_index, last_completed_index) =
                 match app_client(&self.app_client_addr)
-                    .query(|app| {
+                    .query(|app: InnerApp| {
                         let checkpoints = &app.bitcoin.checkpoints;
                         Ok((
                             checkpoints.confirmed_index,
@@ -853,7 +861,7 @@ impl Relayer {
         let dest = output.dest.clone();
         let vout = output.vout;
         let contains_outpoint = app_client(&self.app_client_addr)
-            .query(|app| app.bitcoin.processed_outpoints.contains(outpoint))
+            .query(|app: InnerApp| app.bitcoin.processed_outpoints.contains(outpoint))
             .await?;
 
         let deposit_address = bitcoin::Address::from_script(

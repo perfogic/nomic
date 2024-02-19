@@ -58,9 +58,15 @@ pub async fn main() {
             .await
             .unwrap();
         prev_txid = tx.input[0].previous_output.txid;
-        index -= 1;
 
-        scripts.push((index, tx.input[0].witness.last().unwrap().to_vec()));
+        if index > 0 {
+            index -= 1;
+            scripts.push((index, tx.input[0].witness.last().unwrap().to_vec()));
+        }
+        else {
+            scripts.push((0, tx.input[0].witness.last().unwrap().to_vec()));
+            break;
+        }
 
         if (block.time as u64) < target_time {
             break;
