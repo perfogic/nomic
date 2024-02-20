@@ -1158,7 +1158,7 @@ async fn bitcoin_checkpoint_config() -> Result<Value, BadRequest<String>> {
 }
 
 #[get("/bitcoin/checkpoint/<checkpoint_index>")]
-async fn bitcoin_latest_checkpoint(checkpoint_index: u64) -> Result<Value, BadRequest<String>> {
+async fn bitcoin_checkpoint(checkpoint_index: u32) -> Result<Value, BadRequest<String>> {
     let checkpoint_queue: CheckpointQueue = app_client()
         .query(|app: InnerApp| Ok(app.bitcoin.checkpoints))
         .await
@@ -1168,30 +1168,46 @@ async fn bitcoin_latest_checkpoint(checkpoint_index: u64) -> Result<Value, BadRe
     if checkpoint_len == 0 {
         return Ok(json!({}));
     }
-    println!("{:?}", checkpoint_queue.queue);
-    if let Some(current_checkpoint) = checkpoint_queue.queue.front().map_err(|err| BadRequest(Some(format!("{:?}", err))))? {
-        return Ok(json!({
-            "page": {
-                "current": checkpoint_index,
-                "total": checkpoint_len,
-            },
-            "data": {
-                "current_fee_rate": current_checkpoint.fee_rate,
-                "status": current_checkpoint.status,
-                "fees_collected": current_checkpoint.fees_collected,
-                "signed_at_btc_height": current_checkpoint.signed_at_btc_height,
-                "deposits_enabled": current_checkpoint.deposits_enabled,
-                "fee_rate": current_checkpoint.fee_rate,
-            }
-        }));
+
+    match checkpoint_queue.get(checkpoint_index) {
+        Ok(current_checkpoint) => {
+            return Ok(json!({
+                "page": {
+                    "current": checkpoint_index,
+                    "total": checkpoint_len,
+                },
+                "data": {
+                    "current_fee_rate": current_checkpoint.fee_rate,
+                    "status": current_checkpoint.status,
+                    "fees_collected": current_checkpoint.fees_collected,
+                    "signed_at_btc_height": current_checkpoint.signed_at_btc_height,
+                    "deposits_enabled": current_checkpoint.deposits_enabled,
+                    "fee_rate": current_checkpoint.fee_rate,
+                }
+            }));
+        },
+        Err(e) => {
+            println!("Err: {:?}", e);
+            return Ok(json!({
+                "message": "Index not found"
+            }));
+        }
     }
+}
+
+
+#[get("/bitcoin/checkpoint_queue")]
+async fn bitcoin_checkpoint_queue() -> Result<Value, BadRequest<String>> {
+    let checkpoint_queue: CheckpointQueue = app_client()
+    .query(|app: InnerApp| Ok(app.bitcoin.checkpoints))
+    .await
+    .map_err(|e| BadRequest(Some(format!("{:?}", e))))?;
 
     Ok(json!({
-        "page": {
-            "current": checkpoint_index,
-            "total": checkpoint_len,
-        },
+        "index": checkpoint_queue.index,
+        "confirmed_index": checkpoint_queue.confirmed_index
     }))
+
 }
 
 #[get("/cosmos/gov/v1beta1/proposals")]
@@ -1456,9 +1472,10 @@ fn rocket() -> _ {
             ibc_connection_client_state,
             ibc_connection_channels,
             get_bitcoin_recovery_address,
-            bitcoin_latest_checkpoint,
+            bitcoin_checkpoint,
             bitcoin_checkpoint_config,
-            bitcoin_value_locked
+            bitcoin_value_locked,
+            bitcoin_checkpoint_queue
         ],
     )
 }

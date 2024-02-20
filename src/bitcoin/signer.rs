@@ -337,7 +337,7 @@ where
 
         let to_sign = self
             .client()
-            .query(|app| Ok(app.bitcoin.checkpoints.get(index)?.to_sign(xpub.into())?))
+            .query(|app: InnerApp| Ok(app.bitcoin.checkpoints.get(index)?.to_sign(xpub.into())?))
             .await?;
 
         if to_sign.is_empty() {

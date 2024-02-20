@@ -12,6 +12,7 @@ use nomic::app::Dest;
 use nomic::app::IbcDest;
 use nomic::app::InnerApp;
 use nomic::app::Nom;
+use nomic::bitcoin::checkpoint::CheckpointQueue;
 use nomic::bitcoin::Nbtc;
 use nomic::bitcoin::{relayer::Relayer, signer::Signer};
 use nomic::error::Result;
@@ -100,6 +101,7 @@ pub enum Command {
     RelayOpKeys(RelayOpKeysCmd),
     SetRecoveryAddress(SetRecoveryAddressCmd),
     SigningStatus(SigningStatusCmd),
+    GetCheckpoint(GetCheckpointCmd),
 }
 
 impl Command {
@@ -161,6 +163,7 @@ impl Command {
                 RelayOpKeys(cmd) => cmd.run().await,
                 SetRecoveryAddress(cmd) => cmd.run().await,
                 SigningStatus(cmd) => cmd.run().await,
+                GetCheckpoint(cmd) => cmd.run().await,
             }
         })
     }
@@ -679,6 +682,26 @@ impl SendNbtcCmd {
 }
 
 #[derive(Parser, Debug)]
+pub struct GetCheckpointCmd {
+    index: u32,
+
+    #[clap(flatten)]
+    config: nomic::network::Config,
+}
+
+impl GetCheckpointCmd {
+    async fn run(&self) -> Result<()> {
+        let client = self.config.client();
+        let checkpoint_queue: CheckpointQueue = client.query(|app: InnerApp| Ok(app.bitcoin.checkpoints)).await?;
+
+        let current_checkpoint = checkpoint_queue.get(self.index);
+
+        println!("Checkpoint: {:?}:", current_checkpoint);
+        Ok(())
+    }
+}
+
+#[derive(Parser, Debug)]
 pub struct BalanceCmd {
     address: Option<Address>,
 
@@ -1166,7 +1189,7 @@ impl RelayerCmd {
         }
 
         let relayer = create_relayer().await;
-        let deposits = relayer.start_deposit_relay(relayer_dir_path.clone(), 60 * 60 * 12);
+        let deposits = relayer.start_deposit_relay(relayer_dir_path.clone(), 60 * 5);
 
         let mut relayer = create_relayer().await;
         let recovery_txs = relayer.start_recovery_tx_relay(relayer_dir_path);

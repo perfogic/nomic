@@ -175,6 +175,7 @@ impl Relayer {
                     Arc<Mutex<BTreeMap<_, _>>>,
                     Bytes,
                 )| {
+                    log::info!("Broadcasting {:?}", query);
                     let dest = Dest::decode(body.to_vec().as_slice())
                         .map_err(|e| warp::reject::custom(Error::from(e)))?;
 
@@ -185,7 +186,7 @@ impl Relayer {
                         Some(sigset) => sigset,
                         None => {
                             app_client(app_client_addr)
-                                .query(|app| {
+                                .query(|app: InnerApp| {
                                     let cp = app.bitcoin.checkpoints.get(query.sigset_index)?;
                                     if !cp.deposits_enabled {
                                         return Err(orga::Error::App(
@@ -1051,7 +1052,7 @@ impl Relayer {
     }
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct DepositAddress {
     pub sigset_index: u32,
     pub deposit_addr: String,

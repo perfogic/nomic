@@ -1107,7 +1107,7 @@ impl Config {
             sigset_threshold: SIGSET_THRESHOLD,
             emergency_disbursal_min_tx_amt: 1000,
             #[cfg(feature = "testnet")]
-            emergency_disbursal_lock_time_interval: 60 * 40, // one week
+            emergency_disbursal_lock_time_interval: 60 * 60 * 24 * 7, // one week
             #[cfg(not(feature = "testnet"))]
             emergency_disbursal_lock_time_interval: 60 * 60 * 24 * 7 * 2, // two weeks
             emergency_disbursal_max_tx_size: 50_000,
@@ -1913,7 +1913,6 @@ impl CheckpointQueue {
     }
 
     /// A reference to the checkpoint in the `Building` state.
-    ///
     /// This is the checkpoint which is currently being built, and is not yet
     /// being signed. Other than at the start of the network, before the first
     /// deposit has been received, there will always be a checkpoint in this

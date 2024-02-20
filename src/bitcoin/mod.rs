@@ -226,7 +226,7 @@ impl Config {
             capacity_limit: 100 * 100_000_000, // 100 BTC
             #[cfg(not(feature = "testnet"))]
             capacity_limit: 21 * 100_000_000, // 21 BTC
-            max_deposit_age: 60 * 60 * 24 * 5,
+            max_deposit_age: 60 * 60,
             fee_pool_target_balance: 10_000_000, // 0.1 BTC
             fee_pool_reward_split: (1, 10),
         }
