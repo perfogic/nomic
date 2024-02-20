@@ -586,7 +586,7 @@ impl Relayer {
 
         loop {
             let recovery_txs = app_client(&self.app_client_addr)
-                .query(|app| Ok(app.bitcoin.recovery_txs.signed()?))
+                .query(|app: InnerApp| Ok(app.bitcoin.recovery_txs.signed()?))
                 .await?;
             for signed_tx in recovery_txs.iter() {
                 if relayed.contains(&signed_tx.tx.txid()) {

@@ -5,12 +5,13 @@ use bitcoin::Address as BitcoinAddress;
 use chrono::{TimeZone, Utc};
 use nomic::{
     app::{InnerApp, Nom},
-    bitcoin::{checkpoint::CheckpointQueue, Nbtc, Config as CheckpointConfig},
+    bitcoin::{checkpoint::{Checkpoint, CheckpointQueue}, Config as CheckpointConfig, Nbtc},
     orga::{
         client::{wallet::Unsigned, AppClient},
         coins::{Address, Amount, Decimal, DelegationInfo, Symbol, ValidatorQueryInfo},
         encoding::EofTerminatedString,
         tendermint::client::HttpClient,
+        collections::Ref,
     },
     utils::DeclareInfo,
 };
@@ -1159,42 +1160,60 @@ async fn bitcoin_checkpoint_config() -> Result<Value, BadRequest<String>> {
 
 #[get("/bitcoin/checkpoint/<checkpoint_index>")]
 async fn bitcoin_checkpoint(checkpoint_index: u32) -> Result<Value, BadRequest<String>> {
-    let checkpoint_queue: CheckpointQueue = app_client()
-        .query(|app: InnerApp| Ok(app.bitcoin.checkpoints))
+    let data = app_client()
+        .query(|app: InnerApp| 
+            Ok(
+                (
+                    app.bitcoin.checkpoints.get(checkpoint_index)?.fee_rate,
+                    app.bitcoin.checkpoints.get(checkpoint_index)?.fees_collected,
+                    app.bitcoin.checkpoints.get(checkpoint_index)?.status,
+                )
+            )
+        )
         .await
         .map_err(|e| BadRequest(Some(format!("{:?}", e))))?;
 
-    let checkpoint_len = checkpoint_queue.queue.len();
-    if checkpoint_len == 0 {
-        return Ok(json!({}));
-    }
 
-    match checkpoint_queue.get(checkpoint_index) {
-        Ok(current_checkpoint) => {
-            return Ok(json!({
-                "page": {
-                    "current": checkpoint_index,
-                    "total": checkpoint_len,
-                },
-                "data": {
-                    "current_fee_rate": current_checkpoint.fee_rate,
-                    "status": current_checkpoint.status,
-                    "fees_collected": current_checkpoint.fees_collected,
-                    "signed_at_btc_height": current_checkpoint.signed_at_btc_height,
-                    "deposits_enabled": current_checkpoint.deposits_enabled,
-                    "fee_rate": current_checkpoint.fee_rate,
-                }
-            }));
-        },
-        Err(e) => {
-            println!("Err: {:?}", e);
-            return Ok(json!({
-                "message": "Index not found"
-            }));
+    Ok(json!({
+        "data": {
+            "fee_rate": data.0,
+            "fees_collected": data.1,
+            "status": data.2,
         }
-    }
+    }))
 }
 
+#[get("/bitcoin/checkpoint/last_checkpoint_size")]
+async fn bitcoin_last_checkpoint_size() -> Result<Value, BadRequest<String>> {
+    let config: usize = app_client()
+        .query(|app: InnerApp| {
+            Ok(app
+                .bitcoin
+                .checkpoints
+                .last_completed()?
+                .checkpoint_tx()?
+                .vsize())
+        })
+        .await
+        .map_err(|e| BadRequest(Some(format!("error: {:?}", e))))?;
+
+    let total_inputs: usize = app_client()
+        .query(|app: InnerApp| {
+            Ok(app
+                .bitcoin
+                .checkpoints
+                .last_completed()?
+                .checkpoint_tx()?
+                .input
+                .len())
+        })
+        .await
+        .map_err(|e| BadRequest(Some(format!("error: {:?}", e))))?;
+    Ok(json!({
+        "checkpoint_vsize": config,
+        "total_input_size": total_inputs,
+    }))
+}
 
 #[get("/bitcoin/checkpoint_queue")]
 async fn bitcoin_checkpoint_queue() -> Result<Value, BadRequest<String>> {
@@ -1475,7 +1494,8 @@ fn rocket() -> _ {
             bitcoin_checkpoint,
             bitcoin_checkpoint_config,
             bitcoin_value_locked,
-            bitcoin_checkpoint_queue
+            bitcoin_checkpoint_queue,
+            bitcoin_last_checkpoint_size
         ],
     )
 }
