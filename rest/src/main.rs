@@ -5,13 +5,9 @@ use bitcoin::Address as BitcoinAddress;
 use chrono::{TimeZone, Utc};
 use nomic::{
     app::{InnerApp, Nom},
-    bitcoin::{checkpoint::{Checkpoint, CheckpointQueue}, Config as CheckpointConfig, Nbtc},
+    bitcoin::{checkpoint::{Batch, Checkpoint, CheckpointQueue}, Config as CheckpointConfig, Nbtc},
     orga::{
-        client::{wallet::Unsigned, AppClient},
-        coins::{Address, Amount, Decimal, DelegationInfo, Symbol, ValidatorQueryInfo},
-        encoding::EofTerminatedString,
-        tendermint::client::HttpClient,
-        collections::Ref,
+        client::{wallet::Unsigned, AppClient}, coins::{Address, Amount, Decimal, DelegationInfo, Symbol, ValidatorQueryInfo}, collections::Ref, encoding::EofTerminatedString, tendermint::client::HttpClient
     },
     utils::DeclareInfo,
 };
@@ -1162,13 +1158,19 @@ async fn bitcoin_checkpoint_config() -> Result<Value, BadRequest<String>> {
 async fn bitcoin_checkpoint(checkpoint_index: u32) -> Result<Value, BadRequest<String>> {
     let data = app_client()
         .query(|app: InnerApp| 
-            Ok(
-                (
-                    app.bitcoin.checkpoints.get(checkpoint_index)?.fee_rate,
-                    app.bitcoin.checkpoints.get(checkpoint_index)?.fees_collected,
-                    app.bitcoin.checkpoints.get(checkpoint_index)?.status,
+            {
+                let checkpoint: Ref<'_, Checkpoint> = app.bitcoin.checkpoints.get(checkpoint_index)?;
+                let sigset = checkpoint.sigset.clone();
+                Ok(
+                    (
+                        checkpoint.fee_rate,
+                        checkpoint.fees_collected,
+                        checkpoint.status,
+                        checkpoint.signed_at_btc_height,
+                        sigset
+                    )
                 )
-            )
+            }
         )
         .await
         .map_err(|e| BadRequest(Some(format!("{:?}", e))))?;
@@ -1178,6 +1180,8 @@ async fn bitcoin_checkpoint(checkpoint_index: u32) -> Result<Value, BadRequest<S
         "data": {
             "fee_rate": data.0,
             "fees_collected": data.1,
+            "signed_at_btc_height": data.3,
+            "sigset": data.4,
             "status": data.2,
         }
     }))
