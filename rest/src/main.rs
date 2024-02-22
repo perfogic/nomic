@@ -1144,6 +1144,18 @@ async fn bitcoin_value_locked() -> Value {
     })
 }
 
+#[get("/checkpoint/disbursal_txs")]
+async fn checkpoint_disbursal_txs() -> Result<Value, BadRequest<String>> {
+    let data = app_client()
+        .query(|app: InnerApp| Ok(app.bitcoin.checkpoints.emergency_disbursal_txs()?))
+        .await
+        .map_err(|e| BadRequest(Some(format!("{:?}", e))))?;
+
+    Ok(json!({
+        "data": data
+    }))
+}
+
 #[get("/bitcoin/checkpoint/config")]
 async fn bitcoin_checkpoint_config() -> Result<Value, BadRequest<String>> {
     let config = app_client()
@@ -1186,6 +1198,8 @@ async fn bitcoin_checkpoint(checkpoint_index: u32) -> Result<Value, BadRequest<S
         }
     }))
 }
+
+
 
 #[get("/bitcoin/checkpoint/last_checkpoint_size")]
 async fn bitcoin_last_checkpoint_size() -> Result<Value, BadRequest<String>> {
@@ -1499,7 +1513,8 @@ fn rocket() -> _ {
             bitcoin_checkpoint_config,
             bitcoin_value_locked,
             bitcoin_checkpoint_queue,
-            bitcoin_last_checkpoint_size
+            bitcoin_last_checkpoint_size,
+            checkpoint_disbursal_txs
         ],
     )
 }
